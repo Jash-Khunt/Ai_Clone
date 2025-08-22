@@ -319,44 +319,50 @@ const GeneratedWorkSheet: React.FC = () => {
 
       // Handle match the following questions - collect left/right columns
       if (isInMatchSection && currentQuestion) {
+        // Normalize different dash types to a simple hyphen for regex simplicity
+        const norm = line.replace(/[–—−]/g, "-");
         // Pattern like: "(a) Left  -  (i) Right" with roman numerals
-        const romanHyphen = line.match(/^\(?([a-e])\)?[.)]?\s*(.*?)\s*-\s*\(?((?:i|v|x|l|c|d|m)+)\)?[.)]?\s*(.*)$/i);
+        const romanHyphen = norm.match(/^\(?([a-e])\)?[.)]?\s*(.*?)\s*-\s*\(?((?:i|v|x|l|c|d|m)+)\)?[.)]?\s*(.*)$/i);
         if (romanHyphen) {
           matchLeft.push(`${romanHyphen[1].toLowerCase()}. ${romanHyphen[2].trim()}`);
           matchRight.push(`${romanHyphen[3].toLowerCase()}) ${romanHyphen[4].trim()}`);
           continue;
         }
         // Pattern like: "(a) Left  -  1. Right" with numeric right
-        const hyphenNum = line.match(/^\(?([a-e])\)?[.)]?\s*(.*?)\s*-\s*([1-9][0-9]*)[.)]?\s*(.*)$/i);
+        const hyphenNum = norm.match(/^\(?([a-e])\)?[.)]?\s*(.*?)\s*-\s*([1-9][0-9]*)[.)]?\s*(.*)$/i);
         if (hyphenNum) {
           matchLeft.push(`${hyphenNum[1].toLowerCase()}. ${hyphenNum[2].trim()}`);
           matchRight.push(`${hyphenNum[3]}. ${hyphenNum[4].trim()}`);
           continue;
         }
         // Pattern like: "a. Eyes        1. Hearing"
-        const dualMatch = line.match(/^([a-e])\.\s*(.*?)\s{2,}([1-9][0-9]*)\.\s*(.*)$/i);
+        const dualMatch = norm.match(/^([a-e])\.\s*(.*?)\s{2,}([1-9][0-9]*)\.\s*(.*)$/i);
         if (dualMatch) {
           matchLeft.push(`${dualMatch[1].toLowerCase()}. ${dualMatch[2].trim()}`);
           matchRight.push(`${dualMatch[3]}. ${dualMatch[4].trim()}`);
           continue;
         }
         // Left item only: "(a) Eyes" or "a. Eyes"
-        const leftOnly = line.match(/^\(?([a-e])\)?[.)]?\s*(.*)$/i);
+        const leftOnly = norm.match(/^\(?([a-e])\)?[.)]?\s*(.*)$/i);
         if (leftOnly) {
           matchLeft.push(`${leftOnly[1].toLowerCase()}. ${leftOnly[2].trim()}`);
           continue;
         }
         // Right item only: "(i) Hearing" or "1. Hearing"
-        const rightOnlyRoman = line.match(/^\(?((?:i|v|x|l|c|d|m)+)\)?[.)]?\s*(.*)$/i);
+        const rightOnlyRoman = norm.match(/^\(?((?:i|v|x|l|c|d|m)+)\)?[.)]?\s*(.*)$/i);
         if (rightOnlyRoman) {
           matchRight.push(`${rightOnlyRoman[1].toLowerCase()}) ${rightOnlyRoman[2].trim()}`);
           continue;
         }
-        const rightOnly = line.match(/^([1-9][0-9]*)\.\s*(.*)$/);
+        const rightOnly = norm.match(/^([1-9][0-9]*)\.\s*(.*)$/);
         if (rightOnly) {
           matchRight.push(`${rightOnly[1]}. ${rightOnly[2].trim()}`);
           continue;
         }
+        // Fallback: accumulate raw line as an option so it still renders
+        if (!currentQuestion.options) currentQuestion.options = [];
+        currentQuestion.options.push(line);
+        continue;
       }
     }
 
