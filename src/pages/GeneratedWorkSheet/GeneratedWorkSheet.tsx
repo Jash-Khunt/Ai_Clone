@@ -210,7 +210,7 @@ const GeneratedWorkSheet: React.FC = () => {
       }
 
       // Handle section names (English or Hindi), case-insensitive
-      if (upper.startsWith("SECTION ") || line.includes(":")) {
+      if (upper.startsWith("SECTION ")) {
         const possibleLabel = line;
         const sectionText = line.split(":")[1]?.trim() || line;
         currentSectionLabel = possibleLabel;
@@ -287,7 +287,7 @@ const GeneratedWorkSheet: React.FC = () => {
         } else if (currentSection.includes("TRUE") || currentSection.includes("FALSE")) {
           questionType = "True/False";
         } else if (currentSection.includes("MATCH")) {
-          questionType = "Short Answer"; // Rendered specially as match later
+          questionType = "Match the Following";
         } else if (currentSection.includes("ONEWORD") || currentSection.includes("ONE-WORD") || currentSection.includes("SHORT")) {
           questionType = "One-word Answer";
         } else if (currentSection.includes("BONUS")) {

@@ -116,96 +116,86 @@ const WorksheetContent: React.FC<WorksheetContentProps> = ({
           </div>
         );
 
-      case "Short Answer":
-        // Check if it's a match question (by presence of match lists or options pattern)
-        if (
-          (question.matchLeft && question.matchLeft.length > 0) ||
-          (question.matchRight && question.matchRight.length > 0) ||
-          question.question.includes("Match") ||
-          question.question.includes("मिलान") ||
-          (question.options &&
-            question.options.length > 0 &&
-            question.options.some((opt) => opt.includes(".")))
-        ) {
-          return (
-            <div key={question.id} className={styles.questionContainer}>
-              <div className={styles.questionHeader}>
-                <Text className={styles.questionNumber}>
-                  Question {question.id}
-                </Text>
-                <Text className={styles.questionType}>Match the Following</Text>
-              </div>
-              <Text className={styles.questionText}>{question.question}</Text>
+      case "Match the Following":
+        return (
+          <div key={question.id} className={styles.questionContainer}>
+            <div className={styles.questionHeader}>
+              <Text className={styles.questionNumber}>
+                Question {question.id}
+              </Text>
+              <Text className={styles.questionType}>{question.type}</Text>
+            </div>
+            <Text className={styles.questionText}>{question.question}</Text>
 
-              {question.matchLeft || question.matchRight ? (
-                <div style={{ display: "flex", gap: 24 }}>
-                  <div>
-                    {(question.matchLeft || []).map((opt, idx) => (
-                      <div key={idx} className={styles.matchOption}>
-                        <span className={styles.matchText}>{opt}</span>
-                        <span className={styles.matchBlank}>_______</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div>
-                    {(question.matchRight || []).map((opt, idx) => (
-                      <div key={idx} className={styles.matchOption}>
-                        <span className={styles.matchText}>{opt}</span>
-                        <span className={styles.matchBlank}>_______</span>
-                      </div>
-                    ))}
-                  </div>
+            {question.matchLeft || question.matchRight ? (
+              <div style={{ display: "flex", gap: 24 }}>
+                <div>
+                  {(question.matchLeft || []).map((opt, idx) => (
+                    <div key={idx} className={styles.matchOption}>
+                      <span className={styles.matchText}>{opt}</span>
+                      <span className={styles.matchBlank}>_______</span>
+                    </div>
+                  ))}
                 </div>
-              ) : (
-                question.options && (
-                  <div className={styles.matchOptions}>
-                    {question.options.map((option, index) => {
-                      const optionMatch = option.match(/^([a-e])\.\s*(.*)$/i);
-                      if (optionMatch) {
-                        return (
-                          <div key={index} className={styles.matchOption}>
-                            <span className={styles.matchLetter}>
-                              {optionMatch[1]}.
-                            </span>
-                            <span className={styles.matchText}>
-                              {optionMatch[2]}
-                            </span>
-                            <span className={styles.matchBlank}>_______</span>
-                          </div>
-                        );
-                      } else {
-                        return (
-                          <div key={index} className={styles.matchOption}>
-                            <span className={styles.matchText}>{option}</span>
-                            <span className={styles.matchBlank}>_______</span>
-                          </div>
-                        );
-                      }
-                    })}
-                  </div>
-                )
-              )}
-            </div>
-          );
-        } else {
-          // Regular short answer question
-          return (
-            <div key={question.id} className={styles.questionContainer}>
-              <div className={styles.questionHeader}>
-                <Text className={styles.questionNumber}>
-                  Question {question.id}
-                </Text>
-                <Text className={styles.questionType}>{question.type}</Text>
+                <div>
+                  {(question.matchRight || []).map((opt, idx) => (
+                    <div key={idx} className={styles.matchOption}>
+                      <span className={styles.matchText}>{opt}</span>
+                      <span className={styles.matchBlank}>_______</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <Text className={styles.questionText}>{question.question}</Text>
-              <div className={styles.answerLines}>
-                {[...Array(4)].map((_, index) => (
-                  <div key={index} className={styles.answerLine}></div>
-                ))}
-              </div>
+            ) : (
+              question.options && (
+                <div className={styles.matchOptions}>
+                  {question.options.map((option, index) => {
+                    const optionMatch = option.match(/^([a-e])\.\s*(.*)$/i);
+                    if (optionMatch) {
+                      return (
+                        <div key={index} className={styles.matchOption}>
+                          <span className={styles.matchLetter}>
+                            {optionMatch[1]}.
+                          </span>
+                          <span className={styles.matchText}>
+                            {optionMatch[2]}
+                          </span>
+                          <span className={styles.matchBlank}>_______</span>
+                        </div>
+                      );
+                    } else {
+                      return (
+                        <div key={index} className={styles.matchOption}>
+                          <span className={styles.matchText}>{option}</span>
+                          <span className={styles.matchBlank}>_______</span>
+                        </div>
+                      );
+                    }
+                  })}
+                </div>
+              )
+            )}
+          </div>
+        );
+
+      case "Short Answer":
+        // Regular short answer question
+        return (
+          <div key={question.id} className={styles.questionContainer}>
+            <div className={styles.questionHeader}>
+              <Text className={styles.questionNumber}>
+                Question {question.id}
+              </Text>
+              <Text className={styles.questionType}>{question.type}</Text>
             </div>
-          );
-        }
+            <Text className={styles.questionText}>{question.question}</Text>
+            <div className={styles.answerLines}>
+              {[...Array(4)].map((_, index) => (
+                <div key={index} className={styles.answerLine}></div>
+              ))}
+            </div>
+          </div>
+        );
 
       case "True/False":
         return (
