@@ -309,8 +309,7 @@ const GeneratedWorkSheet: React.FC = () => {
       }
 
       if (currentQuestion?.type === "Multiple Choice") {
-        const optionMatch =
-          line.match(/^\(([a-d])\)(.*)/i) || line.match(/^([a-d])\.(.*)/i);
+        const optionMatch = line.match(/^\(?([a-d])\)?[.)]\s*(.*)$/i);
         if (optionMatch) {
           if (!currentQuestion.options) currentQuestion.options = [];
           currentQuestion.options.push(optionMatch[2].trim());
