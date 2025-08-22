@@ -320,6 +320,20 @@ const GeneratedWorkSheet: React.FC = () => {
 
       // Handle match the following questions - collect left/right columns
       if (isInMatchSection && currentQuestion) {
+        // Pattern like: "(a) Left  -  (i) Right" with roman numerals
+        const romanHyphen = line.match(/^\(?([a-e])\)?[.)]?\s*(.*?)\s*-\s*\(?((?:i|v|x|l|c|d|m)+)\)?[.)]?\s*(.*)$/i);
+        if (romanHyphen) {
+          matchLeft.push(`${romanHyphen[1].toLowerCase()}. ${romanHyphen[2].trim()}`);
+          matchRight.push(`${romanHyphen[3].toLowerCase()}) ${romanHyphen[4].trim()}`);
+          continue;
+        }
+        // Pattern like: "(a) Left  -  1. Right" with numeric right
+        const hyphenNum = line.match(/^\(?([a-e])\)?[.)]?\s*(.*?)\s*-\s*([1-9][0-9]*)[.)]?\s*(.*)$/i);
+        if (hyphenNum) {
+          matchLeft.push(`${hyphenNum[1].toLowerCase()}. ${hyphenNum[2].trim()}`);
+          matchRight.push(`${hyphenNum[3]}. ${hyphenNum[4].trim()}`);
+          continue;
+        }
         // Pattern like: "a. Eyes        1. Hearing"
         const dualMatch = line.match(/^([a-e])\.\s*(.*?)\s{2,}([1-9][0-9]*)\.\s*(.*)$/i);
         if (dualMatch) {
@@ -327,13 +341,18 @@ const GeneratedWorkSheet: React.FC = () => {
           matchRight.push(`${dualMatch[3]}. ${dualMatch[4].trim()}`);
           continue;
         }
-        // Left item only: "a. Eyes"
-        const leftOnly = line.match(/^([a-e])\.\s*(.*)$/i);
+        // Left item only: "(a) Eyes" or "a. Eyes"
+        const leftOnly = line.match(/^\(?([a-e])\)?[.)]?\s*(.*)$/i);
         if (leftOnly) {
           matchLeft.push(`${leftOnly[1].toLowerCase()}. ${leftOnly[2].trim()}`);
           continue;
         }
-        // Right item only: "1. Hearing"
+        // Right item only: "(i) Hearing" or "1. Hearing"
+        const rightOnlyRoman = line.match(/^\(?((?:i|v|x|l|c|d|m)+)\)?[.)]?\s*(.*)$/i);
+        if (rightOnlyRoman) {
+          matchRight.push(`${rightOnlyRoman[1].toLowerCase()}) ${rightOnlyRoman[2].trim()}`);
+          continue;
+        }
         const rightOnly = line.match(/^([1-9][0-9]*)\.\s*(.*)$/);
         if (rightOnly) {
           matchRight.push(`${rightOnly[1]}. ${rightOnly[2].trim()}`);
