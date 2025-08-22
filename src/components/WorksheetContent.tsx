@@ -133,7 +133,6 @@ const WorksheetContent: React.FC<WorksheetContentProps> = ({
                   {(question.matchLeft || []).map((opt, idx) => (
                     <div key={idx} className={styles.matchOption}>
                       <span className={styles.matchText}>{opt}</span>
-                      <span className={styles.matchBlank}>_______</span>
                     </div>
                   ))}
                 </div>
@@ -141,7 +140,6 @@ const WorksheetContent: React.FC<WorksheetContentProps> = ({
                   {(question.matchRight || []).map((opt, idx) => (
                     <div key={idx} className={styles.matchOption}>
                       <span className={styles.matchText}>{opt}</span>
-                      <span className={styles.matchBlank}>_______</span>
                     </div>
                   ))}
                 </div>
@@ -160,14 +158,12 @@ const WorksheetContent: React.FC<WorksheetContentProps> = ({
                           <span className={styles.matchText}>
                             {optionMatch[2]}
                           </span>
-                          <span className={styles.matchBlank}>_______</span>
                         </div>
                       );
                     } else {
                       return (
                         <div key={index} className={styles.matchOption}>
                           <span className={styles.matchText}>{option}</span>
-                          <span className={styles.matchBlank}>_______</span>
                         </div>
                       );
                     }
