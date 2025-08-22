@@ -34,6 +34,7 @@ interface WorksheetContentProps {
     funFact?: string;
     realWorld?: string;
     note?: string;
+    brainTeaser?: string;
   };
 }
 
@@ -363,6 +364,15 @@ const WorksheetContent: React.FC<WorksheetContentProps> = ({
               Real-World Application
             </Title>
             <Text className={styles.bonusText}>{bonusContent.realWorld}</Text>
+          </div>
+        )}
+
+        {bonusContent?.brainTeaser && (
+          <div className={styles.bonusSection}>
+            <Title level={4} className={styles.bonusTitle}>
+              Brain Teaser
+            </Title>
+            <Text className={styles.bonusText}>{bonusContent.brainTeaser}</Text>
           </div>
         )}
 
