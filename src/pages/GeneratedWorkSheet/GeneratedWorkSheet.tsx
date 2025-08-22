@@ -320,7 +320,7 @@ const GeneratedWorkSheet: React.FC = () => {
       // Handle match the following questions - collect left/right columns
       if (isInMatchSection && currentQuestion) {
         // Normalize different dash types to a simple hyphen for regex simplicity
-        const norm = line.replace(/[–—−]/g, "-");
+        const norm = line.replace(/[\u00A0\t]+/g, " ").replace(/[–—−]/g, "-").replace(/\s+/g, " ").trim();
         // Pattern like: "(a) Left  -  (i) Right" with roman numerals
         const romanHyphen = norm.match(/^\(?([a-e])\)?[.)]?\s*(.*?)\s*-\s*\(?((?:i|v|x|l|c|d|m)+)\)?[.)]?\s*(.*)$/i);
         if (romanHyphen) {
