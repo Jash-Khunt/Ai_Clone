@@ -1,0 +1,104 @@
+@import './variables.less';
+
+.container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin: 2rem 0;
+
+  p {
+    color: #6b7280;
+    font-size: 1rem;
+  }
+}
+
+.heading {
+  font-weight: bold;
+}
+
+.subHeading {
+  display: block;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.optionCard {
+  border: 2px solid @border-color;
+  text-align: center;
+  border-radius: 12px;
+  min-height: 280px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+
+  .ant-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &:hover {
+    box-shadow: @box-shadow-heavy;
+    border-color: @border-gradient;
+    transition: 0.3s ease-in-out;
+    transform: scale(1.02);
+  }
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.description {
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.note {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 16px;
+}
+
+.getStartedBtn {
+  background: @primary-gradient;
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  width: 65px;  
+  height: 65px; 
+  border-radius: 0.5rem; 
+  background-color: #f0f2f5; 
+  color: @background-white;
+  margin: 0 auto 12px auto;
+}
+
+.fileImageOutlined {
+  border-radius: 0.5rem; 
+  width: 65px;  
+  height: 65px; 
+  background: linear-gradient(90deg, #457dff 0%, #4fb3f6 100%) !important; 
+}
+
+.bulbOutlined {
+  border-radius: 0.5rem; 
+  width: 65px;  
+  height: 65px; 
+  background: linear-gradient(90deg, #25ca00 0%, #01c976 100%) !important; 
+}
+
+.fileTextOutlined {
+  border-radius: 0.5rem; 
+  width: 65px;  
+  height: 65px; 
+  background: linear-gradient(90deg, #9a58fd 0%, #6759fe 100%) !important; 
+}

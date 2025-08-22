@@ -1,0 +1,230 @@
+.dashboardWrapper {
+  padding: 24px 8rem;
+  background-color: #f7f7fd;
+
+  @media (max-width: 1200px) {
+    padding: 24px 4rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px 1rem;
+  }
+}
+
+.subtitle {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 16px;
+  color: #474646;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.customCard {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #d9d9d9;
+
+  .ant-card-body {
+    padding: 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 768px) {
+    min-height: auto;
+    .ant-card-body {
+      padding: 12px;
+    }
+  }
+}
+
+.statTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  color: #666;
+
+  h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    h4 {
+      font-size: 14px;
+    }
+  }
+}
+
+.statValue {
+  margin: 0 0 4px;
+  font-size: 24px;
+  font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.customFeatureCard {
+  text-align: center;
+  border: 2px solid #d9d9d9;
+  transition: all 0.2s ease;
+
+  .ant-card-body {
+    padding: 24px;
+  }
+
+  &:hover {
+    border-color: #1677ff;
+    box-shadow: 0 0 4px rgba(22, 119, 255, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .ant-card-body {
+      padding: 16px;
+    }
+  }
+}
+
+.iconCircle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0.5rem 0;
+  border-radius: 50%;
+  font-size: 18px;
+  background-color: #e6f4ff;
+  color: #1677ff;
+}
+
+/* Icon color variants */
+.icon0 {
+  background-color: #e6f4ff;
+  color: #1677ff;
+}
+
+.icon1 {
+  background-color: #f0fff0;
+  color: #0a9d02;
+}
+
+.icon2 {
+  background-color: #f9f0ff;
+  color: #722ed1;
+}
+
+.ant-progress {
+  margin-top: 12px;
+}
+
+.quickActions {
+  border-radius: 5px;
+  border: 2px solid #d9d9d9;
+  padding: 1.5rem;
+  background-color: white;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+}
+
+.headerRow {
+  margin-bottom: 24px;
+}
+
+.userAvatar {
+  background-image: linear-gradient(to right, #1677ff, #a940ff);
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+// ai-tools
+
+.cardGrid {
+  margin-top: 1.5rem;
+}
+
+.iconWrapper {
+  font-size: 24px;
+  color: #1677ff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 0.8rem;
+  background: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    border-color: #1677ff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.toolCardInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.iconWrapper {
+  font-size: 20px;
+  color: #1677ff;
+  background: #e6f4ff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.toolContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.plusIcon {
+  font-size: 18px;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  color: #999;
+
+  &:hover {
+    background-color: #f2f3fb;
+    border-radius: 8px;
+    transition: ease-out 0.2s;
+  }
+}

@@ -1,0 +1,59 @@
+.logoLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.logoContainer {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.logo {
+  width: 100%;
+  height: 50px;
+  // object-fit: contain;
+  // filter: brightness(0) invert(1);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logoTitle {
+  color: #111827 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+
+  @media (max-width: 768px) {
+    font-size: 16px !important;
+  }
+}
+
+.logoSubtitle {
+  color: #6b7280 !important;
+  font-size: 12px !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+  font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: 11px !important;
+  }
+}

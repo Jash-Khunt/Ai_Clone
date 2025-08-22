@@ -1,0 +1,189 @@
+@import './variables.less';
+
+.cardContainer {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+}
+
+.wrapper {
+  border: 1px solid @border-color;
+  border-radius: 1rem;
+  padding: 1.2rem 1.5rem !important;
+  margin-bottom: .0.5rem; 
+}
+
+.wrapperB {
+  border: 1px solid @border-color;
+  border-radius: 1rem;
+  padding: 1.2rem 1.5rem !important;
+}
+
+.difficultySection {
+  border: 1px solid @border-color;
+  border-radius: 12px;
+  height: 115px;
+  padding: 20px !important;
+  background: white;
+  
+  .ant-typography {
+    margin-bottom: 16px !important;
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .ant-slider {
+    margin-top: 8px;
+    
+    .ant-slider-track {
+      background-color: #874bff !important;
+      height: 6px !important;
+    }
+    
+    .ant-slider-handle {
+      border: 2px solid #874bff;
+      background-color: #fff;
+      width: 16px;
+      height: 16px;
+      margin-top: -5px;
+    }
+    
+    .ant-slider-mark-text {
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+  }
+}
+
+.numberOfQuestionsSection {
+  border: 1px solid @border-color;
+  border-radius: 12px;
+  height: 115px;
+  padding: 20px !important;
+  background: white;
+  
+  .ant-typography {
+    margin-bottom: 16px !important;
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .dropdownContainer {
+    margin-top: 8px;
+    
+    .ant-select {
+      width: 100%;
+      
+      .ant-select-selector {
+        border-radius: 8px;
+        border: 1px solid #d9d9d9;
+        padding: 8px 12px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+      }
+      
+      .ant-select-selection-placeholder {
+        color: #999;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// ✅ Simple responsive styles
+@media (max-width: 768px) {
+  .difficultySection,
+  .numberOfQuestionsSection {
+    padding: 16px !important;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .difficultySection,
+  .numberOfQuestionsSection {
+    padding: 12px !important;
+  }
+  
+  .difficultySection .ant-slider .ant-slider-mark-text {
+    font-size: 12px;
+  }
+}
+
+// ✅ Ensure proper spacing between sections
+.difficultySection,
+.numberOfQuestionsSection {
+  margin-bottom: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.next {
+  background: @primary-gradient;
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    gap: 10px;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.featureCard {
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.2);
+}
+
+.activeFeature {
+  border: 2px solid #8b5cf6;
+  background: #f9f5ff;
+}
+
+/* ✅ Responsive tweaks */
+@media (max-width: 768px) {
+  .cardContainer {
+    max-width: 100%;
+  }
+
+  .wrapper {
+    padding: 1rem !important;
+  }
+
+  .wrapperB {
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .featureCard {
+    padding: 12px;
+  }
+
+  .navigationButtons {
+    gap: 12px;
+  }
+}

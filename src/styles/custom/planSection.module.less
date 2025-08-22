@@ -1,0 +1,248 @@
+// Plan Section Styles
+.pageSection {
+  padding: 60px 20px;
+  background: #EFF7FD;
+  
+  // Responsive padding adjustments
+  @media (min-width: 768px) and (max-width: 1199px) {
+    padding: 50px 30px;
+  }
+  
+  @media (min-width: 992px) and (max-width: 1199px) {
+    padding: 50px 40px;
+  }
+  
+  @media (max-width: 767px) {
+    padding: 40px 15px;
+  }
+}
+
+.sectionTitle {
+  padding-bottom: 5px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  padding-bottom: 60px;
+  color: rgb(89, 94, 94) !important;
+}
+
+// Plan Card Wrapper
+.planCardWrapper {
+  position: relative;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+  overflow: visible;
+  width: 336px;
+  max-width: 100%;
+  
+  // Responsive adjustments for better medium screen utilization
+  @media (min-width: 768px) and (max-width: 1199px) {
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  @media (min-width: 576px) and (max-width: 767px) {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  @media (max-width: 575px) {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+.planCardWrapper.highlighted {
+  transform: scale(1.03);
+  z-index: 2;
+}
+
+// Plan Card
+.planCard {
+  width: 100%;
+  height: 535px;
+  border-radius: 16px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  // Responsive height adjustments
+  @media (max-width: 767px) {
+    height: auto;
+    min-height: 480px;
+  }
+}
+
+.planCard .ant-card-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem 0 1.5rem;
+  position: relative;
+}
+
+.planCard.highlighted {
+  transform: scale(1.03);
+  box-shadow: 0 0 0 2px #1890ff inset, 0 10px 28px rgba(0,0,0,0.12);
+}
+
+// Plan Card Tag
+.planCardTag {
+  position: absolute;
+  top: -1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 11px;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+}
+
+.planCardTagIcon {
+  font-size: 12px;
+  color: #fadb14;
+}
+
+// Plan Card Header
+.planCardHeader {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+.planCardTitle {
+  margin-bottom: 0 !important;
+  color: rgb(31, 41, 55);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.2rem;
+}
+
+.planCardPriceTitle {
+  margin: 0 !important;
+  line-height: 1;
+}
+
+.price {
+  color: rgb(37, 99, 235);
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.priceUnit {
+  color: rgb(75, 85, 99);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-left: 4px;
+}
+
+.planCardWorksheet {
+  font-size: 16px;
+  color: rgb(75, 85, 99);
+  margin-top: 0 !important;
+}
+
+// Plan Card Features
+.planCardFeatures {
+  text-align: left;
+  margin: 5px 0 0;
+  padding: 0 8px 80px 8px;
+  list-style: none;
+  font-size: 14px;
+  flex: 1;
+  width: 270.4px;
+  min-height: 24px;
+  overflow: visible;
+}
+
+.planCardHtmlDescription {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.planCardHtmlDescription p {
+  margin: 0 0 8px 0;
+}
+
+.planCardHtmlDescription p:last-child {
+  margin-bottom: 0;
+}
+
+.planCardHtmlDescription ul,
+.planCardHtmlDescription ol {
+  margin: 1px 0;
+  padding-left: 20px;
+}
+
+.planCardHtmlDescription ul {
+  list-style-type: disc;
+}
+
+.planCardHtmlDescription ol {
+  list-style-type: decimal;
+}
+
+.planCardHtmlDescription li {
+  margin: 4px 0;
+  line-height: 1.5;
+}
+
+.planCardHtmlDescription strong,
+.planCardHtmlDescription b {
+  font-weight: 600;
+}
+
+.planCardHtmlDescription em,
+.planCardHtmlDescription i {
+  font-style: italic;
+}
+
+// Buttons
+.customButtonPrimary {
+  background: linear-gradient(90deg, rgb(39, 73, 224), rgb(56, 185, 44));
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 0 24px;
+  height: 40px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 25px;
+  left: 1.5rem;
+  right: 1.5rem;
+  width: calc(100% - 3rem) !important;
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+}
+
+.customButtonDark {
+  background: #000000;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 25px;
+  left: 1.5rem;
+  right: 1.5rem;
+  width: calc(100% - 3rem) !important;
+  height: 40px;
+}

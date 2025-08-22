@@ -1,0 +1,99 @@
+@text-purple: #6b46ff;
+@import './variables.less';
+
+.cardWrapper {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 2rem;
+}
+
+.infoRow {
+  margin-bottom: 1.5rem;
+
+  .ant-col {
+    background: #fafafa;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #f0f5ff;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+    }
+  }
+}
+
+.number {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: @muted-text;
+  margin-bottom: 0.2rem;
+}
+
+.label {
+  font-size: 18px;
+  font-weight: 600;
+  color: @primary-color;
+  word-break: break-word;
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    gap: 10px;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.next {
+    background: @primary-gradient;
+}
+
+.footerButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+
+  .previousBtn {
+    background: white;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+      border-color: @text-purple;
+      color: @text-purple;
+    }
+  }
+}

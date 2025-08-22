@@ -1,0 +1,76 @@
+@import './variables.less';
+
+.stepIndicatorWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stepLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stepCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.clickable {
+  cursor: pointer;
+  
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.purple {
+  background: @primary-gradient !important;
+  color: white;
+}
+
+.stepLabel {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #555;
+  text-align: center;
+}
+
+.stepConnector {
+  width: 50px;
+  height: 2px;
+  background-color: #e0e0e0;
+  margin: 0 8px;
+  transition: background-color 0.3s ease;
+}
+
+.connectorPurple {
+  background: @primary-gradient !important; 
+}
+
+.stepBottomText {
+  text-align: center;
+  margin-top: 20px;
+}

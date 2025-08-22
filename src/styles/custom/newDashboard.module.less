@@ -1,0 +1,348 @@
+@import './variables.less';
+
+.dashboardContainer {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+}
+
+.mainContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 32px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+  border-radius: 16px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 32px;
+    padding: 24px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+}
+
+.welcomeSection {
+  flex: 1;
+  max-width: 600px;
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+  }
+}
+
+.welcomeTitle {
+  font-size: 32px;
+  font-weight: 700 !important;
+  color: #000000;
+  margin-bottom: 12px;
+  line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 24px !important;
+  }
+}
+
+.welcomeSubtitle {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 32px;
+  display: block;
+  line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 14px !important;
+  }
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.createButton {
+  background: linear-gradient(135deg, #5a4bff 0%, #8f45ff 100%);
+  border: none;
+  height: 48px;
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(90, 75, 255, 0.3);
+
+  &:hover {
+    background: linear-gradient(135deg, #4a3bff 0%, #7f35ff 100%) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 16px rgba(90, 75, 255, 0.4) !important;
+  }
+
+  @media (max-width: 768px) {
+    width: 100% !important;
+  }
+}
+
+.tourButton {
+  height: 48px;
+  padding: 0 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  background: #ffffff;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #5a4bff;
+    color: #5a4bff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    width: 100% !important;
+  }
+}
+
+.userInfoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 24px;
+  min-width: 280px;
+
+  @media (max-width: 1024px) {
+    align-items: flex-start;
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #5a4bff 0%, #8f45ff 100%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.accountTypeButton {
+  height: 32px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 16px;
+  border: 1px solid #d9d9d9;
+  background: #ffffff;
+  color: #5a4bff;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #5a4bff !important;
+    background: #f8f9ff !important;
+  }
+}
+
+.proButton {
+  background: linear-gradient(135deg, #5a4bff 0%, #8f45ff 100%);
+  border: none;
+  height: 32px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 16px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #4a3bff 0%, #7f35ff 100%) !important;
+    transform: translateY(-1px) !important;
+  }
+}
+
+.curriculumInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background-color: @background-white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #f0f2ff;
+    border-color: #d0d7ff;
+  }
+}
+
+.curriculumIcon {
+  color: #666666;
+  font-size: 16px;
+}
+
+.curriculumText {
+  font-size: 14px;
+  color: #000000;
+  font-weight: 500t;
+}
+
+.usageSection {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 240px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+  }
+}
+
+.usageHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.usageIcon {
+  color: #666666;
+  font-size: 16px;
+}
+
+.usageLabel {
+  font-size: 14px;
+  color: #000000;
+  font-weight: 500;
+}
+
+.progressContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.usageProgress {
+  flex: 1;
+
+  .ant-progress-bg {
+    background: linear-gradient(135deg, #5a4bff 0%, #8f45ff 100%) !important;
+  }
+
+  .ant-progress-inner {
+    background: #f0f0f0 !important;
+    border-radius: 4px !important;
+  }
+}
+
+.usageCount {
+  font-size: 14px;
+  color: #5a4bff;
+  font-weight: 600;
+  min-width: 40px;
+}
+
+.usageFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remainingText,
+.percentageText {
+  font-size: 12px !important;
+  color: #666666 !important;
+}
+
+.bottomText {
+  text-align: center;
+}
+
+.createText {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 18px !important;
+  }
+}
+
+// Custom Segmented styling
+:global(.ant-segmented) {
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  .ant-segmented-item {
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border: none;
+    background: transparent;
+    color: #666666;
+
+    &:hover {
+      background: rgba(90, 75, 255, 0.1);
+      color: #5a4bff;
+    }
+
+    &.ant-segmented-item-selected {
+      background: #ffffff;
+      color: #5a4bff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .ant-segmented-thumb {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}

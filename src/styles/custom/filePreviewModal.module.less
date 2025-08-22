@@ -1,0 +1,131 @@
+@import './variables.less';
+
+.previewModal {
+  .ant-modal-content {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .ant-modal-header {
+    border-bottom: 1px solid @border-color;
+    padding: 20px 24px;
+  }
+  
+  .ant-modal-body {
+    padding: 0;
+  }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid @border-color;
+  
+  .fileName {
+    margin: 0;
+    color: @text-primary;
+    flex: 1;
+  }
+  
+  .modalActions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    
+    .downloadButton {
+      background: @primary-color;
+      border-color: @primary-color;
+      
+      &:hover {
+        background: #6f63ff;
+        border-color: #6f63ff;
+      }
+    }
+    
+    .closeButton {
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.previewContent {
+  .imagePreview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background: #f8f9fa;
+    
+    .previewImage {
+      max-width: 100%;
+      max-height: 500px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+  }
+  
+  .pdfPreview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background: #f8f9fa;
+    
+    .pdfPlaceholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      
+      .pdfIcon {
+        margin-bottom: 24px;
+        
+        svg {
+          filter: drop-shadow(0 2px 4px rgba(24, 144, 255, 0.2));
+        }
+      }
+      
+      .pdfTitle {
+        font-size: 18px;
+        font-weight: 600;
+        color: @text-primary;
+        margin-bottom: 8px;
+        max-width: 300px;
+        word-break: break-word;
+      }
+      
+      .pdfMessage {
+        font-size: 14px;
+        color: @text-secondary;
+        margin-bottom: 24px;
+      }
+      
+      .pdfDownloadButton {
+        background: @primary-color;
+        border-color: @primary-color;
+        height: 40px;
+        padding: 0 24px;
+        border-radius: 8px;
+        
+        &:hover {
+          background: #6f63ff;
+          border-color: #6f63ff;
+        }
+      }
+    }
+    
+    .pdfViewer {
+      border: none;
+      border-radius: 0;
+    }
+  }
+} 

@@ -1,0 +1,70 @@
+{
+  "homePage": {
+    "title": "मुखपृष्ठ",
+    "countLabel": "गिनती"
+  },
+  "header": {
+    "tryDemo": "डेमो आज़माएँ",
+    "startCreating": "निर्माण शुरू करें",
+    "selectRegion": "क्षेत्र चुनें",
+    "whereEducationMeetsInnovation": "जहाँ शिक्षा नवाचार से मिलती है"
+  },
+  "seeAiInAction": {
+    "tryAiGenerator": "AI जनरेटर आज़माएँ",
+    "title": "AI को काम करते हुए देखें",
+    "subtitle": "कोई भी विषय दर्ज करें और देखें कि AI तुरंत प्रश्न कैसे बनाता है",
+    "placeholder": "उदाहरण: पदार्थ की अवस्थाएँ, जोड़ और घटाव, या कोई भी विषय...",
+    "generating": "प्रश्न तैयार हो रहे हैं...",
+    "generateSampleQuestions": "नमूना प्रश्न बनाएँ",
+    "featuresText": "⚡ त्वरित प्रश्न • अनेक प्रारूप • उत्तर कुंजी शामिल • साझा करने योग्य वॉटरमार्क",
+    "badge1": "CBSE + ICSE + Common Core के साथ संगत",
+    "badge2": "PDF निर्यात के लिए तैयार",
+    "badge3": "OCR + AI द्वारा समर्थित"
+  },
+  "howItWorks": {
+    "title": "यह कैसे काम करता है",
+    "step1": {
+      "title": "अपलोड करें या लिखें",
+      "description": "पाठ्यक्रम सामग्री या विषय जोड़ें"
+    },
+    "step2": {
+      "title": "पाठ्यक्रम चुनें",
+      "description": "CBSE, ICSE, Common Core या क्षेत्रीय बोर्ड चुनें"
+    },
+    "step3": {
+      "title": "अनुकूलित करें",
+      "description": "प्रश्न प्रकार और कठिनाई स्तर चुनें"
+    },
+    "step4": {
+      "title": "डाउनलोड करें",
+      "description": "उत्तर कुंजी सहित प्रिंटेबल PDF प्राप्त करें"
+    }
+  },
+  "pageFooter": {
+    "brandTagline": "शिक्षकों, छात्रों और अभिभावकों के लिए AI-संचालित वर्कशीट्स के माध्यम से शिक्षा को और स्मार्ट बना रहे हैं।",
+    "madeInIndia": "भारत में निर्मित",
+    "craftedWith": "सूरत, गुजरात में प्रेम से निर्मित",
+    "sections": {
+      "product": "उत्पाद",
+      "support": "सहायता",
+      "globalPresence": "वैश्विक उपस्थिति"
+    },
+    "links": {
+      "features": "विशेषताएँ",
+      "pricing": "मूल्य निर्धारण",
+      "demo": "डेमो",
+      "api": "API",
+      "helpCenter": "सहायता केंद्र",
+      "contactUs": "संपर्क करें",
+      "whatsappSupport": "व्हाट्सएप सहायता",
+      "howItWorks": "यह कैसे काम करता है"
+    },
+    "locations": {
+      "india": "भारत: सूरत, गुजरात",
+      "uae": "यूएई: दुबई सिलिकॉन ओएसिस",
+      "usa": "यूएसए: कैलिफ़ोर्निया"
+    },
+    "supportingText": "हम CBSE, ICSE, Common Core और अधिक को समर्थन देते हैं",
+    "copyright": "© {{year}} AIWorksheetPro. हम दुनिया भर में शिक्षा को स्मार्ट बना रहे हैं। सर्वाधिकार सुरक्षित।"
+  }
+}

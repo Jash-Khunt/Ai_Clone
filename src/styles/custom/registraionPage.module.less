@@ -1,0 +1,284 @@
+// Colors
+@primary-color: #3b82f6; // Blue-500
+@text-color: #111827;    // Gray-900
+@text-color-secondary: #6b7280; // Gray-600
+@border-color-base: #e5e7eb; // Gray-200
+@background-color: #f9fafb; // Gray-50
+
+// Main Container
+.registrationPage {
+  min-height: 100vh;
+  background-color: @background-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+// Card Styles
+.registrationCard {
+  width: 100%;
+  max-width: 448px;
+  background: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 16px;
+  padding: 32px;
+
+  @media (max-width: 768px) {
+    padding: 24px;
+    border-radius: 12px;
+  }
+}
+
+// Back Link
+.backLink {
+  display: flex;
+  align-items: center;
+  color: @primary-color;
+  margin-bottom: 24px;
+  cursor: pointer;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Icon Container
+.iconContainer {
+  margin-bottom: 24px;
+  
+  .iconCircle {
+    width: 64px;
+    height: 64px;
+    background: @primary-color;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    
+    .icon {
+      color: white;
+      font-size: 24px;
+    }
+  }
+}
+
+// Heading Styles
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: @text-color;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: @text-color-secondary;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+// Button Styles
+.customButton {
+  width: 100%;
+  height: 48px;
+  font-weight: 500;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  border: 1px solid @border-color-base;
+  background: transparent;
+  color: @text-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:hover {
+    background: @background-color;
+    color: @text-color;
+    border-color: darken(@border-color-base, 10%);
+  }
+  
+  .googleIcon {
+    font-size: 20px;
+    margin-right: 12px;
+  }
+}
+
+// Divider Styles
+.customDivider {
+  margin: 24px 0;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: @border-color-base;
+    transform: translateY(-50%);
+  }
+  
+  .dividerText {
+    position: relative;
+    padding: 0 16px;
+    background: white;
+    color: @text-color-secondary;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+// Link Styles
+.signInText {
+  color: @text-color-secondary;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.signInLink {
+  color: @primary-color;
+  font-weight: 500;
+  padding: 0;
+  height: auto;
+  
+  &:hover {
+    color: darken(@primary-color, 10%);
+    text-decoration: underline;
+  }
+}
+
+// Modal Styles
+.modal {
+  .ant-modal-content {
+    border-radius: 16px;
+    padding: 24px;
+  }
+  
+  .ant-modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+    
+    .ant-modal-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: @text-color;
+      text-align: center;
+    }
+  }
+}
+
+// Form Item Styles
+.formItem {
+  margin-bottom: 16px;
+  
+  .ant-form-item-label {
+    padding-bottom: 8px;
+    
+    > label {
+      color: @text-color;
+      font-weight: 500;
+      font-size: 14px;
+      
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
+
+// Input Styles
+.input {
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid @border-color-base;
+  padding: 12px 16px;
+  
+  &:hover {
+    border-color: darken(@border-color-base, 10%);
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 3px fade(@primary-color, 20%);
+    border-color: @primary-color;
+  }
+}
+
+// Select Styles
+.select {
+  width: 100%;
+  border-radius: 8px;
+  
+  .ant-select-selector {
+    height: 48px !important;
+    border-radius: 8px !important;
+    border: 1px solid @border-color-base !important;
+    padding: 12px 16px !important;
+    
+    &:hover {
+      border-color: darken(@border-color-base, 10%) !important;
+    }
+  }
+  
+  &.ant-select-focused {
+    .ant-select-selector {
+      box-shadow: 0 0 0 3px fade(@primary-color, 20%) !important;
+      border-color: @primary-color !important;
+    }
+  }
+}
+
+// Checkbox Styles
+.checkbox {
+  .ant-checkbox-inner {
+    border-radius: 4px;
+    border-color: @border-color-base;
+  }
+  
+  .ant-checkbox-checked {
+    .ant-checkbox-inner {
+      background-color: @primary-color;
+      border-color: @primary-color;
+    }
+  }
+}
+
+// Section Title
+.sectionTitle {
+  color: @text-color;
+  margin-bottom: 16px !important;
+  font-weight: 600;
+}
+
+// Divider
+.divider {
+  border-top: 1px solid @border-color-base;
+  margin: 24px 0;
+}
+
+// Submit Button
+.submitButton {
+  width: 100%;
+  height: 48px;
+  background: @primary-color;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-top: 16px;
+  border: none;
+  
+  &:hover {
+    background: darken(@primary-color, 10%);
+  }
+  
+  &:active {
+    background: darken(@primary-color, 15%);
+  }
+}

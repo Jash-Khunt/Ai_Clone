@@ -1,0 +1,49 @@
+.notificationPage{
+  margin: auto 22px;
+}
+
+.notificationCard {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 1070px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.preferenceItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f3f4f6;
+  flex-wrap: wrap;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.blackSwitch {
+  background-color: #1f2937 !important;
+
+  .ant-switch-handle {
+    background: #ffffff !important;
+  }
+
+  &.ant-switch-checked {
+    background-color: #1f2937 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .notificationCard {
+    padding: 16px;
+  }
+
+  .preferenceItem {
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

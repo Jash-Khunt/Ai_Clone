@@ -1,0 +1,189 @@
+.container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 8px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.points {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconBase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 32px;
+
+  svg {
+    font-size: 32px;
+  }
+}
+
+.uploadIcon {
+  background-color: #dce5f7;
+}
+
+.describeIcon {
+  background-color: #ebbffa;
+
+  svg {
+    color: rgb(117, 73, 129);
+  }
+}
+
+.fileIcon {
+  background-color: rgb(176, 228, 194);
+
+  svg {
+    color: green;
+  }
+}
+
+.recommended {
+  font-size: 1.3rem;
+  color: #3478f6;
+  font-weight: 500;
+}
+
+.subText {
+  color: #555;
+  margin-top: 6px;
+  margin-bottom: 30px;
+}
+
+.cardContainer {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.perfectWhen {
+  text-align: center;
+  font-weight: 500;
+}
+
+.card {
+  width: 100%;
+  max-width: 360px;
+  height: 26.25rem;
+  border-radius: 10px;
+  text-align: left;
+  background-color: #fafafa;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: #2563eb;
+  }
+}
+
+.activeCard {
+  border: 2px solid #2563eb;
+  background-color: #eef4ff;
+}
+
+.cardIcon {
+  font-size: 28px;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.solveBox {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  background-color: rgb(245, 245, 245);
+  font-size: 14px;
+  height: 80px;
+  padding: 0 5px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+
+  ul {
+    margin: 8px 0 0 20px;
+    padding-left: 0;
+  }
+
+  li {
+    list-style: disc;
+    color: #333;
+  }
+}
+
+.points {
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 8px;
+      list-style-type: disc;
+      margin-left: 16px;
+    }
+  }
+}
+
+.howItWorks {
+  text-align: center;
+
+  .steps {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+
+    div {
+      flex: 1;
+      padding: 0 10px;
+    }
+
+    h4 {
+      color: #2563eb;
+    }
+  }
+
+  .tags {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+
+    span {
+      background-color: #f0f5ff;
+      color: #1d39c4;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+  }
+
+  .startButton {
+    background: linear-gradient(90deg, #2749e0, #38b92c);
+    border: none;
+    font-weight: 500;
+    padding: 6px 28px;
+    border-radius: 5px;
+  }
+}

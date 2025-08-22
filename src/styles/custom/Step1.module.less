@@ -1,0 +1,320 @@
+@import './variables.less';
+
+.inputMethodWrapper {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+}
+
+.myBox {
+  padding: 1rem !important;
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.combo3{
+  border-radius: 22px !important;
+  margin-top: 16px !important;
+  width: 100% !important;
+  text-align: center !important;
+  padding: 0.2rem 1.1rem !important;
+}
+
+.columnFileName {
+  margin-left: 26px;
+}
+
+.tableWrapper {
+  margin-top: 24px;
+}
+
+.columnActions {
+  margin-right: 26px;
+}
+
+.tableContainer {
+  min-height: 200px;
+  overflow-y: auto;
+  margin-top: 12px;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  padding: 0;
+  background: #fafafa;
+}
+
+.titleWrapper {
+  text-align: center;
+  margin-bottom: 16px;
+
+  h3 {
+    font-size: 24px;
+    @media (max-width: 576px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.greateWork {
+  background: #edfff0;
+}
+
+.miniContainer {
+  width: 50%;
+  border-radius: 1rem;
+  padding: 16px;
+  border: 1px solid @border-color;
+}
+
+.proTip {
+  background: #f6f7ff;
+}
+
+.proTipRed {
+  background: #fff5f5;
+}
+
+.optionCard {
+  text-align: center;
+  border-radius: 12px;
+  transition: all 0.1s ease;
+  line-height: 1.8;
+
+  @media (max-width: 576px) {
+    padding: 12px;
+  }
+}
+
+.optionCard:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+}
+
+.selectedCard {
+  border: 2px solid @border-gradient !important;
+}
+
+.iconLarge {
+  font-size: 32px;
+  margin-bottom: 8px;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  
+  @media (max-width: 576px) {
+    font-size: 24px;
+  }
+}
+
+.upload {
+  background: #eaf1ff;
+  color: @blue-color;
+}
+
+.type {
+  background: #e2fde9;
+  color: rgb(4, 179, 4);
+}
+
+.sample {
+  background: #f9e3ff;
+  color: rgb(178, 1, 178);
+}
+
+.next{
+  background: @primary-gradient;
+}
+
+.optionTagBlue,
+.optionTagGreen,
+.optionTagPurple {
+  margin-top: 8px;
+  font-size: 12px;
+  display: block;
+  border-radius: 1rem;
+  font-weight: 500;
+}
+
+.optionTagBlue { background: #e6f4ff; color: @blue-color; }
+.optionTagGreen { background: #edfff0; color: green;}
+.optionTagPurple { background: #f9f0ff; color: @parents;}
+
+.tipsCollapse {
+  background: @background-white;
+  border: 1px solid @border-color;
+  margin-top: 16px;
+  border-radius: 8px;
+}
+
+.tipBoxBlue,
+.tipBoxYellow,
+.tipBoxPurple {
+  padding: 1rem !important;
+  border-radius: 1rem;
+  margin-bottom: 8px;
+}
+
+.tipBoxBlue { background: #e6f4ff; }
+.tipBoxYellow { background: #fffbe6; margin: 1rem 0; }
+.tipBoxPurple { background: #f9f0ff; }
+
+.navigationButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    gap: 10px;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+/* Drag & Drop Upload Section */
+.uploadInstructions {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.uploadNote {
+  margin-top: 8px;
+  color: gray;
+}
+
+// Type topic
+.typeTopic {
+  border: 1px solid @border-color;
+  border-radius: 0.5rem;
+  padding: 1.5rem 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.textAreaWrapper {
+  padding: 0.4rem 0.8rem 2rem 0.8rem;
+}
+
+/* Sample Upload Section */
+.sampleUploadArea {
+  background: @background-white;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  border: 2px dashed #d1d5db;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sampleUploadIcon {
+  font-size: 4rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.sampleUploadTitle {
+  margin-bottom: 0.5rem !important;
+  color: #374151 !important;
+}
+
+.sampleUploadDescription {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+// .sampleUploadDragger {
+//   background: @background-white !important;
+//   border: none !important;
+//   padding: 0 !important;
+// }
+
+.sampleUploadButton {
+  background: @primary-gradient !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem 1.5rem !important;
+}
+
+.infoSectionWrapper {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.generateButtonWrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.generateButton {
+  background: @primary-gradient;
+  font-size: 1.1rem !important;
+  padding: 0.7rem 2rem !important;
+  height: auto !important;
+}
+
+/* Additional styles for remaining inline styles */
+.subtitle {
+  color: gray;
+  font-size: 16px;
+}
+
+.optionCardsRow {
+  margin-bottom: 24px;
+}
+
+.uploadIcon {
+  font-size: 32px;
+  color: #999;
+}
+
+.chooseFilesButton {
+  margin-top: 12px;
+}
+
+.tipTextBlue {
+  color: darkblue;
+}
+
+.tipTextYellow {
+  color: darkgoldenrod;
+}
+
+.tipTextPurple {
+  color: purple;
+}
+
+.tipContent {
+  color: #374151;
+}
+
+.tipContentYellow {
+  color: #92400E;
+}
+
+.uploadDragger {
+  margin-bottom: 24px;
+  background: #ffffff;
+  padding: 24px 0;
+  border-radius: 8px;
+  border: 2px dashed #c6c6c6ff;
+}

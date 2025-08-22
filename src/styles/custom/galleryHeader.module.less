@@ -1,0 +1,98 @@
+@import './variables.less';
+
+.header {
+  background: @background-light;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.headerRight {
+  background: white;
+  border: 1px solid @border-color;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  
+  .anticon {
+    color: @primary-color;
+  }
+}
+
+
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .pageTitleSub {
+    margin-left: 1.7rem;
+  }
+
+  .pageTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: @text-primary;
+    margin: 5px;
+    align-items: center;
+    gap: 8px;
+
+    .anticon {
+      font-size: 24px;
+      color: @primary-color;
+    }
+  }
+
+  .pageDescription {
+    font-size: 16px;
+    color: @text-secondary;
+    margin: 0;
+  }
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: @background-white;
+  border: 0.02px solid rgb(181, 180, 180);
+
+  &:hover {
+    background: @primary-gradient !important;
+    color: @background-white !important;
+    transition: all 0s ease-in-out !important;
+  }
+}
+
+@media (max-width: 768px) { 
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    
+    .headerRight {
+      align-self: stretch;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .titleSection .pageTitle {
+    font-size: 24px;
+  }
+}

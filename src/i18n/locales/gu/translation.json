@@ -1,0 +1,70 @@
+{
+  "homePage": {
+    "title": "હોમ પેજ",
+    "countLabel": "ગણતરી"
+  },
+  "header": {
+    "tryDemo": "ડેમો અજમાવો",
+    "startCreating": "બનાવવાનું શરૂ કરો",
+    "selectRegion": "વિસ્તાર પસંદ કરો",
+    "whereEducationMeetsInnovation": "જ્યાં શિક્ષણ નવીનતાને મળે છે"
+  },
+  "seeAiInAction": {
+    "tryAiGenerator": "AI જનરેટર અજમાવો",
+    "title": "AI ને કાર્યમાં જુઓ",
+    "subtitle": "કોઈ પણ વિષય દાખલ કરો અને તરત જ AI દ્વારા પ્રશ્નો કેવી રીતે બનાવાય છે તે જુઓ",
+    "placeholder": "અજમાવો: પદાર્થની સ્થિતિઓ, ઉમેરણ અને બાદબાકી, અથવા કોઈ પણ વિષય...",
+    "generating": "જનરેટ થઈ રહ્યું છે...",
+    "generateSampleQuestions": "નમૂનાના પ્રશ્નો બનાવો",
+    "featuresText": "⚡ તરત પ્રશ્નો • અનેક બંધારણો • જવાબકી સમાવિષ્ટ • શેર માટે વોટરમાર્ક સાથે",
+    "badge1": "CBSE + ICSE + Common Core સાથે સુસંગત",
+    "badge2": "PDF નિકાસ માટે તૈયાર",
+    "badge3": "OCR + AI દ્વારા સપોર્ટેડ"
+  },
+  "howItWorks": {
+    "title": "કેવી રીતે કાર્ય કરે છે",
+    "step1": {
+      "title": "અપલોડ કરો અથવા લખો",
+      "description": "પાઠ્યક્રમ અથવા વિષય ઉમેરો"
+    },
+    "step2": {
+      "title": "પાઠ્યક્રમ પસંદ કરો",
+      "description": "CBSE, ICSE, Common Core અથવા પ્રાદેશિક બોર્ડ પસંદ કરો"
+    },
+    "step3": {
+      "title": "કસ્ટમાઈઝ કરો",
+      "description": "પ્રશ્નોના પ્રકારો અને કઠિનાઈ પસંદ કરો"
+    },
+    "step4": {
+      "title": "ડાઉનલોડ કરો",
+      "description": "જવાબકી સાથે છાપવા માટે PDF મેળવો"
+    }
+  },
+  "pageFooter": {
+    "brandTagline": "શિક્ષકો, વિદ્યાર્થીઓ અને માતાપિતાઓ માટે AI આધારિત વર્કશીટ્સ દ્વારા શિક્ષણને વધુ સ્માર્ટ બનાવી રહ્યા છીએ.",
+    "madeInIndia": "ભારતમાં બનાવ્યું",
+    "craftedWith": "સુરત, ગુજરાતમાં પ્રેમથી બનાવેલું",
+    "sections": {
+      "product": "ઉત્પાદન",
+      "support": "સહાય",
+      "globalPresence": "ગ્લોબલ હાજરી"
+    },
+    "links": {
+      "features": "વિશેષતાઓ",
+      "pricing": "કિંમતો",
+      "demo": "ડેમો",
+      "api": "API",
+      "helpCenter": "મદદ કેન્દ્ર",
+      "contactUs": "અમારો સંપર્ક કરો",
+      "whatsappSupport": "વોટ્સએપ સપોર્ટ",
+      "howItWorks": "કેવી રીતે કાર્ય કરે છે"
+    },
+    "locations": {
+      "india": "ભારત: સુરત, ગુજરાત",
+      "uae": "યુએઈ: દુબઈ સિલિકોન ઓએસિસ",
+      "usa": "યુએસએ: કેલિફોર્નિયા"
+    },
+    "supportingText": "અમે CBSE, ICSE, Common Core અને વધુને સપોર્ટ કરીએ છીએ",
+    "copyright": "© {{year}} AIWorksheetPro. સમગ્ર વિશ્વમાં શિક્ષણને વધુ સ્માર્ટ બનાવીએ છીએ. તમામ હકો અનામત."
+  }
+}

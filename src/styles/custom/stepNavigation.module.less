@@ -1,0 +1,112 @@
+@import './variables.less';
+
+.navigationCard {
+  margin-bottom: 24px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  
+  :global(.ant-card-body) {
+    padding: 20px;
+  }
+}
+
+.stepLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  cursor: default;
+  
+  &:hover {
+    border-color: #d9d9d9;
+    background-color: #fafafa;
+  }
+}
+
+.accessible {
+  cursor: pointer;
+  
+  &:hover {
+    border-color: @primary-color;
+    background-color: #f6f0ff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.1);
+  }
+}
+
+.completed {
+  background-color: #f6ffed;
+  border-color: #b7eb8f;
+  
+  .stepNumber {
+    background-color: #52c41a;
+    color: white;
+  }
+}
+
+.current {
+  background-color: #f0f5ff;
+  border-color: #91d5ff;
+  
+  .stepNumber {
+    background-color: @primary-color;
+    color: white;
+  }
+}
+
+.stepInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.stepNumber {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.stepDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stepDescription {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.navigateButton {
+  color: @primary-color;
+  font-weight: 500;
+  
+  &:hover {
+    color: #722ed1;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .stepLink {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .navigateButton {
+    align-self: flex-end;
+  }
+}

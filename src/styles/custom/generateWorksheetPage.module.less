@@ -1,0 +1,79 @@
+@import './variables.less';
+
+.container {
+  background: @background-white;
+  min-height: 100vh;
+}
+
+.galleryWrapper {
+  background: @background-light;
+  margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 12px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .galleryWrapper{
+    padding: 0 12px;
+  }
+
+  .wrapper {
+    padding: 0 12px;
+  }
+}
+
+.sectionIcon {
+  color: @primary-color !important;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 24px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 0 12px;
+  }
+}
+
+.leftSection {
+  flex: 2;
+  max-width: 400px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+.rightSection {
+  flex: 1;
+  min-width: 300px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    min-width: 100%;
+  }
+}
+
+.uploadCard {
+  background-color: @background-white;
+  border-radius: 7px;
+  box-shadow: @box-shadow-light;
+
+  @media (max-width: 768px) {
+    padding: 12px;
+  }
+}
+
+.sectionIcon {
+  margin: 0 0.5rem 0 0;
+  font-size: 1.5rem;
+  color: @primary-color;
+}

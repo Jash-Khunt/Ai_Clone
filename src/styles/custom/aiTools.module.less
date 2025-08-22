@@ -1,0 +1,222 @@
+@import './variables.less';
+
+.educationTools {
+  margin-top: 1.25rem;
+}
+
+.heroSection {
+  background: linear-gradient(90deg, #f2f6fe 0%, #e8faff 100%);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+}
+
+.heroTitle {
+  font-weight: 700 !important;
+  color: @primary-color !important;
+  font-size: 3rem !important;
+  line-height: 1 !important;
+
+  div {
+    color: #ffb400;
+  }
+}
+
+.heroText {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  color: @text-secondary;
+  font-size: 1.2rem;
+}
+
+.iconGradient {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 28px;
+  color: white;
+}
+
+.iconStudents { background: @gradient-students; }
+.iconTeachers { background: @gradient-teachers }
+.iconParents  { background: @gradient-parents; }
+.iconTutors   { background: @gradient-tutors; }
+
+.toolCard {
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+
+  .ant-card-body {
+    padding: 1.5rem;
+  }
+  &:hover {
+    border: 1px solid @parents !important;
+  }
+}
+
+.primaryBtn {
+  background: linear-gradient(90deg, #457dff 0%, #02b8c8 100%);
+  border: none;
+  padding: 1.5rem;
+   
+  &:hover {
+    color: #ffffff !important;
+    background: linear-gradient(90deg, #014dff 0%, #017f8b 100%) !important;
+    transform: scale(1.02);
+  }
+}
+
+.title {
+    font-weight: 700 !important;
+}
+
+.sparkles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+}
+
+.scondTitle {
+    font-weight: 700 !important;
+    color: @text-primary;
+    margin-bottom: 1rem;
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h3 {
+    font-weight: bold;
+  }
+
+  p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+  }
+}
+
+.iconWrapper {
+  font-size: 2rem;
+  color: #457dff;
+  margin-bottom: 1rem;
+}
+
+.featureList {
+  list-style: disc;
+  padding-left: 1.2rem;
+  text-align: left;
+  margin-bottom: 1rem;
+
+  li {
+    color: #444;
+  }
+}
+
+.bottomCta {
+  text-align: center;
+  margin-top: 3rem;
+  background-color: #f7f7ff;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+
+  h4 {
+    font-weight: bold;
+  }
+
+  p {
+    color: #555;
+  }
+
+  .browseBtn {
+    background: @primary-gradient;
+    padding: 0 2rem;
+    font-weight: 600;
+    border: none;
+  }
+}
+
+.dsc {
+    color: @muted-text !important;
+}
+
+.subText {
+    color: @muted-text;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.toolCard {
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+
+  .ant-card-body {
+    padding: 1.5rem;
+  }
+}
+
+.btn {
+    font-weight: 600;
+}
+
+/* Students */
+.toolCard.students:hover {
+    transition: 0.3s ease-in-out;
+    border: 1px solid @students !important;
+}
+.toolCard.students:hover .iconBackStudents {
+    background: @gradient-students !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+/* Teachers */
+.toolCard.teachers:hover {
+    border: 1px solid @teachers !important;
+    transition: 0.3s ease-in-out;
+}
+.toolCard.teachers:hover .iconBackTeachers {
+    transition: 0.3s ease-in-out;
+    background: @gradient-teachers !important;
+    color: white !important;
+    font-weight: 600;
+}
+
+/* Parents */
+.toolCard.parents:hover {
+    transition: 0.3s ease-in-out;
+    border: 1px solid @parents !important;
+}
+.toolCard.parents:hover .iconBackParents {
+    transition: 0.3s ease-in-out;
+    background: @gradient-parents !important;
+    font-weight: 600;
+    color: white !important;
+}
+
+/* Tutors */
+.toolCard.tutors:hover {
+    transition: 0.3s ease-in-out;
+    border: 1px solid @tutors !important;
+}
+.toolCard.tutors:hover .iconBackTutors {
+    transition: 0.3s ease-in-out;
+    background: @gradient-tutors !important;
+    color: white !important;
+    font-weight: 600;
+}

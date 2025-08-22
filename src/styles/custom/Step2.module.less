@@ -1,0 +1,70 @@
+@import './variables.less';
+
+.wrapper {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 0.5rem;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    gap: 10px;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.mainurriclum {
+  border: 1px solid @border-gray;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.next {
+  background: @primary-gradient;
+}
+
+.step2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.tipBoxYellow{
+  margin-top: 2rem;
+  padding: 1rem !important;
+  border-radius: 1rem;
+  margin-bottom: 8px;
+  background: #fffbe6;
+  border: 1px solid rgb(254, 205, 79);
+}
+
+.wrapper {
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+}
+
+.navigationButtons {
+  @media (max-width: 576px) {
+    flex-direction: column;
+    gap: 10px;
+
+    button {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,264 @@
+@import './variables.less';
+
+.hidden {
+  display: none !important;
+}
+
+// File Card
+.fileCard {
+  background: @background-white;
+  border: 1px solid @border-color;
+  border-radius: 12px;
+  padding: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  &.listView {
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 20px;
+    height: auto;
+    
+    .cardHeader {
+      margin-bottom: 0;
+      margin-right: 16px;
+      flex-shrink: 0;
+    }
+    
+    .cardContent {
+      flex: 1;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      
+      .thumbnail {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0;
+        margin-right: 16px;
+        flex-shrink: 0;
+        
+        .pdfIcon,
+        .imageIcon {
+          font-size: 24px;
+        }
+        
+        .hoverActions {
+          .actionButton {
+            width: 28px;
+            height: 28px;
+            
+            .anticon {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      
+      .fileInfo {
+        flex: 1;
+        
+        .fileName {
+          margin-bottom: 4px;
+        }
+      }
+    }
+    
+    .generateButton {
+      width: auto;
+      min-width: 140px;
+      flex-shrink: 0;
+    }
+  }
+  
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    
+    .typeTag {
+      font-size: 10px;
+      font-weight: 500;
+      border-radius: 12px;
+      padding: 4px 8px;
+      height: auto;
+      line-height: 1;
+    }
+    
+    .statusTag {
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: 12px;
+      padding: 4px 8px;
+      height: auto;
+      line-height: 1;
+      background: #f6ffed;
+      border-color: #b7eb8f;
+      color: @success-color;
+    }
+  }
+  
+  .cardContent {
+    flex: 1;
+    margin-bottom: 12px;
+    
+    .thumbnail {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        background: #f0f0f0;
+        transform: scale(1.02);
+      }
+      
+      .pdfPreview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+        .pdfIcon {
+          font-size: 32px;
+          // color: @primary-color;
+          margin-bottom: 8px;
+        }
+        
+        .pdfLabel {
+          font-size: 12px;
+          font-weight: 600;
+          color: @primary-color;
+          background: rgba(24, 144, 255, 0.1);
+          padding: 4px 8px;
+          border-radius: 12px;
+          border: 1px solid rgba(24, 144, 255, 0.2);
+        }
+      }
+      
+      .pdfIcon {
+        font-size: 32px;
+        color: gray;      
+      }
+      
+      .imageIcon {
+        font-size: 32px;
+        color: @text-light;
+      }
+      
+      .hoverActions {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 8px;
+        opacity: 0;
+        animation: fadeIn 0.2s ease forwards;
+        
+        .actionButton {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.9);
+          border: none;
+          color: @text-secondary;
+          transition: all 0.2s ease;
+          
+          &:hover {
+            background: white;
+            color: @primary-color;
+            transform: scale(1.1);
+          }
+          
+          &.downloadButton {
+            &:hover {
+              color: @success-color;
+            }
+          }
+          
+          .anticon {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .fileInfo {
+          .fileName {
+      font-size: 12px;
+      font-weight: 600;
+      color: @text-primary;
+      margin: 0 0 6px 0;
+      line-height: 1.3;
+    }
+      
+          .uploadDate {
+      color: @text-light;
+      font-size: 11px;
+    }
+    }
+  }
+  
+  .generateButton {
+    background: @primary-gradient;
+    border: none;
+    border-radius: 8px;
+    height: 36px;
+    font-weight: 500;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    
+    &:hover {
+      background: linear-gradient(90deg, #6f63ff 0%, #a050ff 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(90, 75, 255, 0.3);
+    }
+    
+    .anticon {
+      font-size: 16px;
+    }
+  }
+} 
+
+.imagePreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}

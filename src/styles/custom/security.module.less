@@ -1,0 +1,71 @@
+.securityPage {
+  background: linear-gradient(to bottom right, #f9fbff, #fdfbff);
+  min-height: 100vh;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.securityWrapper {
+  max-width: 1070px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 24px;
+}
+
+.cardWrapper {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.actionList {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.actionButton {
+  height: 44px;
+  border-radius: 6px;
+  font-weight: 500;
+  border: 1px solid #e5e7eb;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+
+  &:hover {
+    border-color: #d1d5db;
+    background-color: #f9fafb;
+  }
+}
+
+.danger {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: #dc2626;
+  }
+}
+
+@media (max-width: 768px) {
+  .securityWrapper {
+    padding: 0 16px;
+  }
+
+  .cardWrapper {
+    padding: 16px;
+  }
+
+  .actionButton {
+    font-size: 14px;
+  }
+}

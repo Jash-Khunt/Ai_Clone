@@ -1,0 +1,445 @@
+@orange-500:    #ff6b35;
+@orange-400:    #f7931e;
+@emerald-500:   #10b981;
+@emerald-600:   #059669;
+@blue-500:      #3b82f6;
+
+@gray-50:       #f8f9fa;
+@gray-100:      #f9fafb;
+@gray-200:      #e5e7eb;
+@gray-300:      #d1d5db;
+@gray-400:      #9ca3af;
+@gray-500:      #6b7280;
+@gray-600:      #374151;
+@gray-800:      #1f2937;
+
+@white:         #ffffff;
+
+@radius-sm:     .5rem;
+@radius-md:     .75rem;
+@radius-lg:     1rem;
+
+@shadow-sm:     0 4px 6px rgba(0,0,0,.05);
+@shadow-md:     0 6px 8px rgba(0,0,0,.1);
+@shadow-lg:     0 8px 12px rgba(0,0,0,.1);
+
+@transition-fast: all .3s ease;
+@transition-med:  transform .3s ease;
+
+.cbseWorksheetsPage {
+  min-height: 100vh;
+  background-color: @white;
+}
+
+.heroSection {
+  background: linear-gradient(135deg, @orange-500 0%, @orange-400 50%, @emerald-500 100%);
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: white;
+    backdrop-filter: blur(10px);
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .backButton {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      color: black !important;
+      font-weight: 500;
+      padding: .5rem 1rem;
+      border-radius: @radius-sm;
+      background: fade(@white,20%);
+
+      &:hover {
+        background: fade(@gray-400,30%) !important;
+        color: black !important;
+      }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      color: @white;
+
+      .logoIcon   { font-size: 1.5rem; }
+      .logoText   { font-size: 1.25rem; font-weight: 700; }
+      .logoSubtext{ font-size: .75rem; opacity: .9; margin-left: .5rem; }
+    }
+  }
+
+  .heroContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+
+    .badge {
+      background: fade(@white,20%);
+      color: @white;
+      padding: .5rem 1rem;
+      border-radius: 2rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+
+      .badgeText { font-size: .875rem; font-weight: 600; }
+    }
+
+    .heroTitle {
+      color: @white !important;
+      font-size: 3rem !important;
+      font-weight: 700 !important;
+      margin: 0 0 1.5rem 0 !important;
+      text-shadow: 0 2px 4px rgba(0,0,0,.3);
+    }
+
+    .heroSubtitle {
+      color: fade(@white,95%) !important;
+      font-size: 1.125rem !important;
+      line-height: 1.75 !important;
+      max-width: 800px;
+      margin-bottom: 2.5rem !important;
+    }
+
+    .heroActions {
+      width: 100%;
+      max-width: 600px;
+
+      .createButton {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        background-color: @white !important;
+        color: @orange-500 !important;
+        border: none !important;
+        font-weight: 600 !important;
+        height: 3rem !important;
+        box-shadow: @shadow-sm !important;
+
+        &:hover {
+          background-color: @gray-100 !important;
+          transform: translateY(-2px);
+          box-shadow: @shadow-md !important;
+        }
+      }
+
+      .searchInput {
+        height: 3rem;
+
+        .ant-input {
+          height: 3rem !important;
+          border-radius: @radius-sm !important;
+          border: 2px solid fade(@white,30%) !important;
+          background: fade(@white,90%) !important;
+        }
+      }
+    }
+  }
+}
+
+.featuresSection {
+  padding: 4rem 2rem;
+  background-color: @gray-50;
+
+  @media (max-width: 768px) { padding: 2rem 1rem; }
+
+  .featureCard {
+    text-align: center;
+    padding: 2rem;
+    background: @white;
+    border-radius: @radius-lg;
+    box-shadow: @shadow-sm;
+    height: 100%;
+    transition: @transition-med;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: @shadow-lg;
+    }
+
+    .featureIcon     { margin-bottom: 1.5rem; }
+    .featureTitle    {
+      color: @gray-800 !important;
+      font-size: 1.125rem !important;
+      font-weight: 600 !important;
+      margin: 0 0 1rem 0 !important;
+    }
+    .featureDescription {
+      color: @gray-500 !important;
+      font-size: .875rem !important;
+      line-height: 1.5 !important;
+    }
+  }
+}
+
+.worksheetsSection {
+  padding: 4rem 2rem;
+  background-color: @white;
+
+  @media (max-width: 768px) { padding: 2rem 1rem; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    .sectionTitle {
+      color: @gray-800 !important;
+      font-size: 2rem !important;
+      font-weight: 700 !important;
+      margin: 0 0 1rem 0 !important;
+
+      @media (max-width: 480px) { font-size: 1.5rem !important; }
+    }
+
+    .sectionSubtitle {
+      color: @gray-500 !important;
+      font-size: 1.125rem !important;
+      line-height: 1.75 !important;
+    }
+  }
+
+  .worksheetCard {
+    height: 100%;
+    border-radius: @radius-lg !important;
+    box-shadow: @shadow-sm !important;
+    border: 1px solid @gray-200 !important;
+    transition: @transition-fast;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: @shadow-lg !important;
+    }
+
+    .cardHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+
+      .cardBadges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+
+        .classBadge   { background-color: @orange-500;   .badgeCommon(); }
+        .subjectBadge { background-color: @emerald-500;  .badgeCommon(); }
+        .boardBadge   { background-color: @blue-500;     .badgeCommon(); }
+      }
+
+      .rating { font-size: .875rem; }
+    }
+
+    .cardTitle {
+      color: @gray-800 !important;
+      font-size: 1.125rem !important;
+      font-weight: 600 !important;
+      margin: 0 0 .75rem 0 !important;
+      line-height: 1.4 !important;
+    }
+
+    .cardDescription {
+      color: @gray-500 !important;
+      font-size: .875rem !important;
+      line-height: 1.5 !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .cardMeta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background-color: @gray-50;
+      border-radius: @radius-sm;
+
+      @media (max-width: 1024px) { grid-template-columns: 1fr; }
+
+      .metaItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .metaLabel { color: @gray-500 !important; font-size: .75rem !important; font-weight: 500 !important; }
+        .metaValue { color: @gray-800 !important; font-size: .75rem !important; font-weight: 600 !important; }
+      }
+    }
+
+    .topicsCovered {
+      margin-bottom: 1.5rem;
+
+      .topicsLabel {
+        color: @gray-600 !important;
+        font-size: .875rem !important;
+        font-weight: 600 !important;
+        margin-bottom: .5rem !important;
+        display: block;
+      }
+
+      .topicTags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+
+        .topicTag {
+          background-color: @gray-200;
+          color: @gray-600;
+          padding: .25rem .5rem;
+          border-radius: .375rem;
+          font-size: .75rem;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .cardActions {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+
+      @media (max-width: 1024px) { flex-direction: column; }
+
+      .previewButton,
+      .downloadButton {
+        flex: 1;
+        min-width: 100px;
+        height: 2.5rem;
+        border-radius: @radius-sm;
+        font-size: .875rem;
+        font-weight: 500;
+        border-color: @gray-300 !important;
+        color: @gray-600 !important;
+
+        &:hover {
+          background-color: @gray-100 !important;
+          border-color: @gray-400 !important;
+        }
+      }
+
+      .useTemplateButton {
+        flex: 1;
+        min-width: 120px;
+        height: 2.5rem;
+        border-radius: @radius-sm;
+        font-size: .875rem;
+        font-weight: 600;
+        background-color: @orange-500 !important;
+        border-color: @orange-500 !important;
+
+        &:hover {
+          background-color: darken(@orange-500,8%) !important; // #e55a2b
+          border-color:  darken(@orange-500,8%) !important;
+        }
+      }
+    }
+  }
+}
+
+.footerCTA {
+  background: linear-gradient(135deg, @orange-500 0%, @orange-400 50%, @emerald-500 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+
+  @media (max-width: 768px) { padding: 2rem 1rem; }
+
+  .ctaTitle {
+    color: @white !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    margin: 0 0 1rem 0 !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,.3);
+
+    @media (max-width: 768px) { font-size: 1.5rem !important; }
+  }
+
+  .ctaSubtitle {
+    color: fade(@white,95%) !important;
+    font-size: 1.125rem !important;
+    line-height: 1.75 !important;
+    margin: 0 auto 2rem !important;
+    max-width: 600px;
+
+    @media (max-width: 768px) { font-size: 1rem !important; }
+  }
+
+  .ctaButton {
+    background-color: @white !important;
+    color: @orange-500 !important;
+    border: none !important;
+    font-weight: 600 !important;
+    height: 3rem !important;
+    padding: 0 2rem !important;
+    box-shadow: @shadow-sm !important;
+    margin-top: 2rem;
+
+    &:hover {
+      background-color: @gray-100 !important;
+      transform: translateY(-2px);
+      box-shadow: @shadow-md !important;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .heroSection .heroContent .heroTitle { font-size: 2.5rem !important; }
+
+  .worksheetsSection .worksheetCard .cardActions {
+    .previewButton,
+    .downloadButton,
+    .useTemplateButton { flex: none; width: 100%; }
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection .heroContent {
+    .heroTitle    { font-size: 2rem !important; }
+    .heroSubtitle { font-size: 1rem !important; }
+
+    .heroActions { flex-direction: column; gap: 1rem; }
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection .heroContent .heroTitle { font-size: 1.75rem !important; }
+
+  .worksheetsSection .sectionHeader .sectionTitle { font-size: 1.5rem !important; }
+
+  .worksheetsSection .worksheetCard .cardBadges {
+    flex-direction: column; align-items: flex-start;
+  }
+
+  .topicTags { justify-content: center; }
+}
+
+.badgeCommon() {
+  color: @white;
+  padding: .25rem .75rem;
+  border-radius: 1rem;
+  font-size: .75rem;
+  font-weight: 600;
+}

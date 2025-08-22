@@ -1,0 +1,321 @@
+@import "./custom/variables.less";
+
+.header {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+  padding: 0 24px;
+  height: 64px;
+  line-height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+
+  @media (max-width: 1280px) and (min-width: 769px) {
+    padding: 0 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
+}
+
+.avatar {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.2rem;
+  background: @primary-gradient !important;
+  color: #fff !important;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.profileSet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.logoSection {
+  flex-shrink: 0;
+
+  .ant-typography {
+    margin: 0 !important;
+  }
+
+  h1 {
+    color: #111827 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+
+    @media (max-width: 1280px) and (min-width: 769px) {
+      font-size: 18px !important;
+    }
+  }
+
+  p {
+    color: #6b7280 !important;
+    font-size: 12px !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+
+    @media (max-width: 1280px) and (min-width: 769px) {
+      display: none;
+    }
+  }
+}
+
+.navigationSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 40px;
+
+  @media (max-width: 1280px) and (min-width: 769px) {
+    margin: 0 16px;
+  }
+
+  @media (max-width: 1280px) {
+    display: none;
+  }
+}
+
+.navigationMenu {
+  border: none !important;
+  background: transparent !important;
+
+  .ant-menu-item,
+  .ant-menu-submenu {
+    color: #374151 !important;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 0 20px;
+    margin: 0 4px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+
+    @media (max-width: 1280px) and (min-width: 769px) {
+      padding: 0 10px;
+      margin: 0 2px;
+      font-size: 14px;
+    }
+
+    &:hover {
+      color: #7c3aed !important;
+      background-color: #f3f4f6 !important;
+    }
+
+    &-selected {
+      color: #7c3aed !important;
+      background-color: #ede9fe !important;
+      font-weight: 600;
+    }
+  }
+}
+
+.actionsSection {
+  flex-shrink: 0;
+
+  @media (max-width: 1280px) and (min-width: 769px) {
+    .ant-space {
+      gap: 8px !important;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    display: none;
+  }
+}
+
+.languageSelector,
+.regionSelector {
+  color: #6b7280 !important;
+  font-size: 14px;
+  font-weight: 500;
+
+  .ant-select-selector {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 8px;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background-color: #f3f4f6 !important;
+      border-radius: 6px;
+    }
+  }
+
+  &.regionSelector {
+    @media (max-width: 1280px) and (min-width: 769px) {
+      display: none;
+    }
+  }
+}
+
+.tryFreeButton {
+  color: #374151 !important;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0 16px;
+  height: 36px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+
+  @media (max-width: 1280px) and (min-width: 769px) {
+    padding: 0 12px;
+    font-size: 13px;
+    height: 32px;
+  }
+
+  &:hover {
+    color: #7c3aed !important;
+    background-color: #f3f4f6 !important;
+  }
+}
+
+.signUpButton {
+  background-color: #7c3aed !important;
+  border-color: #7c3aed !important;
+  color: white !important;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 20px;
+  height: 36px;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px 0 rgba(124, 58, 237, 0.2);
+  transition: all 0.25s ease;
+
+  @media (max-width: 1280px) and (min-width: 769px) {
+    padding: 0 16px;
+    font-size: 13px;
+    height: 32px;
+  }
+
+  &:hover {
+    background-color: #6d28d9 !important;
+    border-color: #6d28d9 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px 0 rgba(124, 58, 237, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px 0 rgba(124, 58, 237, 0.2);
+  }
+}
+
+/* Mobile Styles */
+.mobileMenuButton {
+  color: #374151 !important;
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background-color: #f3f4f6 !important;
+  }
+}
+
+.mobileDrawer {
+  .ant-drawer-header {
+    border-bottom: 1px solid #e5e7eb;
+  }
+}
+
+.mobileMenuContent {
+  padding: 0;
+}
+
+.mobileNavigationMenu {
+  border: none !important;
+  background: transparent !important;
+  margin-bottom: 24px;
+
+  .ant-menu-item {
+    color: #374151 !important;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 12px 0;
+    margin: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #f3f4f6;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #7c3aed !important;
+      background-color: #f9fafb !important;
+    }
+  }
+}
+
+.mobileSelectors {
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 24px;
+}
+
+.mobileLanguageSelector {
+  .ant-select-selector {
+    height: 44px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+  }
+}
+
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobileTryFreeButton {
+  height: 44px !important;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: #374151 !important;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #f3f4f6 !important;
+  }
+}
+
+.mobileSignUpButton {
+  height: 44px !important;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #7c3aed !important;
+  border-color: #7c3aed !important;
+  color: #fff !important;
+  transition: background 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: #6d28d9 !important;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}

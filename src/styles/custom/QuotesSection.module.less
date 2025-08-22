@@ -1,0 +1,54 @@
+.quoteSection {
+  background-color: #fff7eb;
+  border: 1px solid #ffd591;
+  border-radius: 8px;
+  padding: 16px 24px;
+  margin: 24px auto;
+  max-width: 1200px;
+  width: 100%;
+
+  .titleWithIcon {
+    font-weight: 600;
+    font-size: 18px;
+    color: #262626;
+  }
+
+  .quotes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+
+    .quoteCard {
+      flex: 1 1 100%;
+      background: #ffffff;
+      border: 1px solid #ffe58f;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 14px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+
+      b {
+        color: #262626;
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      p {
+        margin: 0;
+        color: #555555;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  // For tablets and above
+  @media (min-width: 768px) {
+    .quotes {
+      .quoteCard {
+        flex: 1 1 calc(33.333% - 10.67px); // 3 cards in a row with gap compensation
+      }
+    }
+  }
+}

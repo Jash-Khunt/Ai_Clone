@@ -1,0 +1,617 @@
+{
+  "menu": {
+    "home": "Home",
+    "features": "Features",
+    "samples": "Try Samples",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "blog": "Blog",
+    "guides": "Guides",
+    "templates": "Templates",
+    "contact": "Contact"
+  },
+  "header": {
+    "title": "Smart Learning Solutions",
+    "tryFree": "Try Free",
+    "signUp": "Sign Up",
+    "menu": "Menu",
+    "region": "Select Region"
+  },
+  "hero": {
+    "stats": {
+      "teachers": "2,500+ Teachers Trust Us Daily",
+      "time": "Save 5+ Hours Weekly",
+      "engagement": "Boost Student Engagement 85%",
+      "rating": "4.9/5 Rating"
+    },
+    "badge": "Join 2,500+ Teachers Who Saved 15,000+ Hours This Month",
+    "title": {
+      "line1": "Create Curriculum-Aligned",
+      "line2": "Worksheets",
+      "highlight": "That Boost Learning by 85%",
+      "subtitle": "In Just 30 Seconds"
+    },
+    "description": "Stop spending 5+ hours creating worksheets. Our AI generates personalized, <strong>CBSE, Common Core, and 150+</strong> curriculum-aligned worksheets that increase student engagement by 85% - instantly.",
+    "cta": {
+      "create": "Start Creating Free - No Credit Card",
+      "demo": "Watch Demo (2 min)",
+      "library": "Browse Library"
+    },
+    "features": {
+      "daily": "3 Free Worksheets Daily Forever",
+      "nocard": "No Credit Card Required",
+      "cancel": "Cancel Anytime"
+    },
+    "process": {
+      "title": "From Idea to Worksheet in <span class='yellowText'>4 Simple Steps</span>",
+      "description": "Watch your educational content transform into professional worksheets with our intelligent AI workflow.",
+      "steps": {
+        "1": {
+          "title": "Upload & Analyze",
+          "desc": "Drop your textbook page, paste content, or describe your topic. Our AI will instantly understand your curriculum."
+        },
+        "2": {
+          "title": "AI Magic Happens",
+          "desc": "Advanced algorithms analyze content, align with standards, and craft questions that truly test understanding."
+        },
+        "3": {
+          "title": "Customize & Perfect",
+          "desc": "Review, edit, and personalize your worksheet. Add your school branding, adjust difficulty, or modify questions."
+        },
+        "4": {
+          "title": "Download & Share",
+          "desc": "Get your professional PDF with answer keys, teacher notes, and fun facts. Ready to print and inspire learning!"
+        }
+      },
+      "completion": "Average completion time: 30 seconds"
+    },
+    "testimonial": {
+      "text": "\"This saved me 12 hours last week alone! My Grade 4 students love the engaging questions.\"",
+      "author": "- Sarah K., Mumbai",
+      "role": "Primary School"
+    }
+  },
+  "seeAiInAction": {
+    "title": "Try AI Generator Live",
+    "subtitle": "Enter any topic and see AI magic happen in seconds",
+    "placeholder": "e.g., Water cycle for Grade 4, Fractions Grade 3, Photosynthesis...",
+    "button": {
+      "generateNow": "Generate Now",
+      "generating": "Generating..."
+    },
+    "features": {
+      "instantQuestions": "Instant Questions",
+      "answerKeys": "Answer Keys + Teacher Notes",
+      "curriculumAligned": "Curriculum Aligned",
+      "funFacts": "Fun Facts Included"
+    }
+  },
+  "try": {
+    "badge": "Ready-Made Excellence",
+    "title1": "Experience Before",
+    "title2": "You Customize",
+    "subtitle": "Discover how our AI crafts <highlight>curriculum-perfect worksheets</highlight> in your educational language—<highlightPurple>no setup required!</highlightPurple>",
+    "samplesTitle": "Explore More Regional Excellence",
+    "samplesText": "Discover worksheets tailored to your specific educational standards and cultural context",
+    "features": {
+      "multipleFormats": {
+        "title": "Multiple Formats",
+        "description": "MCQ, Fill-ups, Short answers & more"
+      },
+      "curricula": {
+        "title": "150+ Curricula",
+        "description": "CBSE, Common Core, Regional boards"
+      },
+      "aiPowered": {
+        "title": "AI-Powered",
+        "description": "Smart content analysis & generation"
+      },
+      "fastResults": {
+        "title": "30-Second Results",
+        "description": "Generate worksheets instantly"
+      }
+    },
+    "statistics": {
+      "worksheets": {
+        "label": "Worksheets Generated",
+        "subtext": "+286 today"
+      },
+      "educators": {
+        "label": "Happy Educators",
+        "subtext": "From 150+ countries"
+      },
+      "accuracy": {
+        "label": "Curriculum Accuracy",
+        "subtext": "AI Verified"
+      }
+    }
+  },
+  "worksheetProDemo": {
+    "title": "See AI WorksheetPro in Action",
+    "subtitle": "Watch how teachers create worksheets in seconds using our three powerful generation methods",
+    "tabs": {
+      "image": "Generate via Image",
+      "topic": "Generate via Topic",
+      "templates": "Use Sample Templates"
+    },
+    "video": {
+      "live": "LIVE",
+      "watchDemo": "Watch Demo (2:30)"
+    },
+    "features": {
+      "pdf": "PDF Upload Support",
+      "ocr": "OCR Text Recognition",
+      "auto": "Auto Question Generation"
+    },
+    "cta": {
+      "title": "Start Free Trial",
+      "subtitle": "No credit card required • 3 free worksheets daily • Upgrade anytime",
+      "button": "Get Started Now"
+    }
+  },
+  "features": {
+    "header": {
+      "title": "Why Educators & Learners Choose AIWorksheetPro",
+      "subtitle": "Powerful features designed for teachers, tutors, students, and parents to enhance learning outcomes"
+    },
+    "list": {
+      "ai": {
+        "title": "AI-Powered Generation",
+        "desc": "Smart AI creates contextual questions from your syllabus content instantly"
+      },
+      "instant": {
+        "title": "Instant Results",
+        "desc": "Generate complete worksheets with answer keys in under 30 seconds"
+      },
+      "quality": {
+        "title": "Quality Assured",
+        "desc": "Every worksheet includes fun facts, brain teasers, and curriculum alignment"
+      },
+      "custom": {
+        "title": "Customizable",
+        "desc": "Choose question types, difficulty levels, and add your school branding"
+      },
+      "multiCurriculum": {
+        "title": "Multi-Curriculum",
+        "desc": "Supports CBSE, ICSE, Common Core, and regional educational standards"
+      },
+      "globalFormat": {
+        "title": "Global Format",
+        "desc": "Both A4 and Letter size formats with regional customization"
+      },
+      "multiInput": {
+        "title": "Multi-Input Support",
+        "desc": "Upload PDFs, images, or type prompts. Our AI adapts to any input format."
+      },
+      "multiLang": {
+        "title": "Multi-Language Support",
+        "desc": "Generate worksheets in English, Hindi, Arabic, and Gujarati."
+      },
+      "dashboard": {
+        "title": "Quick Actions Dashboard",
+        "desc": "Instantly generate worksheets, upload syllabus, and reuse saved topics in one click."
+      },
+      "chat": {
+        "title": "Chat Assistant",
+        "desc": "Use natural prompts like 'Grade 4 + 10 MCQs on Water Cycle' to create content instantly."
+      },
+      "library": {
+        "title": "Browse Library",
+        "desc": "Explore curated worksheets by country, curriculum, subject, and grade with filters."
+      },
+      "tools": {
+        "title": "AI Tools Suite",
+        "desc": "Includes Story Generator, Quiz Maker, Concept Mapper, Report Card Tool, and more."
+      }
+    }
+  },
+  "trusted": {
+    "title": "Trusted by Educators Worldwide",
+    "subtitle": "Join thousands of teachers who are revolutionizing their classrooms with AI-powered tools",
+    "statistics": {
+      "teachers": "Active Teachers",
+      "worksheets": "Worksheets Created",
+      "satisfaction": "Satisfaction Rate",
+      "countries": "Countries"
+    },
+    "testimonials": [
+      {
+        "quote": "This platform has revolutionized how I create worksheets. What used to take hours now takes minutes!",
+        "name": "Sarah Johnson",
+        "title": "5th Grade Teacher",
+        "school": "Lincoln Elementary"
+      },
+      {
+        "quote": "The AI-generated problems are perfectly aligned with our curriculum standards.",
+        "name": "Michael Chen",
+        "title": "Math Department Head",
+        "school": "Roosevelt High School"
+      },
+      {
+        "quote": "The ability to customize difficulty levels has been incredible for my diverse learners.",
+        "name": "Emily Rodriguez",
+        "title": "Special Education Teacher",
+        "school": "Harmony Middle School"
+      }
+    ]
+  },
+  "contact": {
+    "header": "Get in Touch",
+    "subtitle": "Have questions? We're here to help you transform your teaching experience",
+    "methods": {
+      "email": {
+        "title": "Email Us",
+        "description": "Get support via email",
+        "contact": "support@aiworksheetpro.com"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "Quick chat support",
+        "contact": "Chat with us"
+      },
+      "call": {
+        "title": "Call Us",
+        "description": "Speak with our team",
+        "contact": "+1 (555) 123-4567"
+      }
+    }
+  },
+  "footer": {
+    "madeInIndia": "Made in India",
+    "prideText": "with Pride & Innovation",
+    "craftedText": "Crafted in Surat",
+    "cityText": "Diamond City of Gujarat",
+    "qualityText": "World-Class Quality",
+    "tagline": "Empowering teachers worldwide with AI-generated educational content. Save 5+ hours weekly and boost student engagement by 85%.",
+    "newsletterTitle": "Stay Updated",
+    "newsletterPlaceholder": "Enter your email",
+    "subscribeButton": "Subscribe",
+    "quickLinksTitle": "Quick Links",
+    "quickLinks": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "templates": "Templates",
+      "blog": "Blog",
+      "helpCenter": "Help Center",
+      "api": "API"
+    },
+    "supportTitle": "Support & Legal",
+    "supportLinks": {
+      "contact": "Contact Us",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "gdpr": "GDPR Compliance",
+      "status": "Status",
+      "security": "Security"
+    },
+    "copyright": "All rights reserved.",
+    "madeWithLove": "Made with love in Surat, India",
+    "allSystems": "All systems operational"
+  },
+  "registerPage": {
+    "backToHome": "Back to Home",
+    "joinTitle": "Join AI Worksheet",
+    "subtitle": "Get started with your learning journey",
+    "continueGoogle": "Continue with Google",
+    "alreadyHaveAccount": "Already have an account?",
+    "signIn": "Sign in",
+    "modal": {
+      "completeProfile": "Complete Your Profile",
+      "createAccount": "Create Account"
+    },
+    "form": {
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "mobile": "Mobile Number",
+      "username": "Username",
+      "role": "I am a",
+      "agreement": "I agree to the Terms of Service and Privacy Policy",
+      "roles": {
+        "student": "Student",
+        "teacher": "Teacher",
+        "parent": "Parent",
+        "homeTutor": "Home Tutor"
+      },
+      "createAccountBtn": "Create Account",
+      "completeRegistrationBtn": "Complete Registration"
+    },
+    "sections": {
+      "requiredInfo": "Required Information",
+      "additionalInfo": "Additional Information (Optional)"
+    },
+    "optional": {
+      "country": "Country",
+      "curriculum": "Curriculum",
+      "subjects": "Subjects of interest",
+      "grade": "Grade Level",
+      "languages": "Language Preferences"
+    },
+    "notifications": {
+      "googleProfileError": "Failed to fetch Google profile",
+      "googleLoginFailed": "Google login failed",
+      "registrationSuccess": "Registration Successful",
+      "registrationSuccessDesc": "Your account has been created successfully!",
+      "loginSuccess": "Login Successful",
+      "loginSuccessDesc": "You've been logged in successfully!",
+      "loginFailed": "Login Failed",
+      "loginFailedDesc": "Could not log in with your account",
+      "registrationFailed": "Registration Failed"
+    }
+  },
+  "demoPage": {
+    "title": "See AIWorksheetPro in Action",
+    "subtitle": "Watch how our AI creates perfect worksheets in just 3 simple steps"
+  },
+  "demoVideoCard": {
+    "title": "Product Demo Video",
+    "subtitle": "Click to watch how AIWorksheetPro works"
+  },
+  "featureCard": {
+    "features": [
+      {
+        "title": "Upload Your Content",
+        "description": "Simply upload your syllabus, textbook page, or type in a topic"
+      },
+      {
+        "title": "AI Analysis & Customization",
+        "description": "Customize difficulty & question types automatically."
+      },
+      {
+        "title": "Download & Share",
+        "description": "Download worksheet as PDF or share directly."
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Why Choose AIWorksheetPro?",
+    "features": [
+      "Supports CBSE, Common Core, and regional boards",
+      "Multiple question types (MCQ, Fill-ups, Short answers)",
+      "Instant PDF generation with answer keys",
+      "WhatsApp sharing for easy distribution",
+      "Customizable difficulty levels",
+      "Works for all subjects and grades"
+    ]
+  },
+  "footerAction": {
+    "tryButton": "Try It Yourself",
+    "note": "Watch the demo video to continue"
+  },
+  "createWorksheet": {
+    "heading": "Hello! Let's Create Your Worksheet",
+    "recommended": "Recommended for Parents",
+    "subText": "Upload homework pages or textbook content to create practice worksheets that match your child’s curriculum",
+    "cards": {
+      "upload": {
+        "title": "Upload Content",
+        "perfectWhen": "You have textbook pages, homework, or study materials",
+        "solves": "I need worksheets that match exactly what my child is studying",
+        "points": [
+          "Extracts text automatically",
+          "Upload any educational content",
+          "Maintains curriculum alignment"
+        ],
+        "badge": "Recommended for You"
+      },
+      "describe": {
+        "title": "Describe Topic",
+        "perfectWhen": "You know exactly what topic you want to cover",
+        "solves": "I need custom worksheets for specific learning objectives",
+        "points": [
+          "Use natural language input",
+          "Customize difficulty",
+          "Multiple question formats"
+        ]
+      },
+      "sample": {
+        "title": "Upload Sample",
+        "perfectWhen": "You have a worksheet format you like",
+        "solves": "I need more practice worksheets like this one",
+        "points": [
+          "Preserves original style",
+          "Generates new questions",
+          "Same difficulty level"
+        ]
+      }
+    },
+    "labels": {
+      "perfectWhen": "📌 Perfect When",
+      "solves": "✅ Solves"
+    }
+  },
+  "quotesSection": {
+    "heading": "❓ Still Not Sure Which Option to Choose?",
+    "items": [
+      {
+        "label": "👨‍👩‍👧 Parents say:",
+        "text": "“Upload Content works best when I take photos of homework or textbook pages”"
+      },
+      {
+        "label": "👩‍🏫 Educators say:",
+        "text": "“Describe Topic is perfect for creating lesson-specific worksheets quickly”"
+      },
+      {
+        "label": "🎓 Students say:",
+        "text": "“Upload Sample helps me get more practice with the same type of problems”"
+      }
+    ]
+  },
+  "howItWorks": {
+    "heading": "How AIWorksheetPro Works (3 Simple Steps)",
+    "steps": [
+      {
+        "title": "Choose Your Input Method",
+        "desc": "Select the option that matches what you have available"
+      },
+      {
+        "title": "AI Creates Your Worksheet",
+        "desc": "Our AI analyzes and generates perfectly tailored questions"
+      },
+      {
+        "title": "Download & Use",
+        "desc": "Get a print-ready PDF with answer key included"
+      }
+    ],
+    "tags": [
+      "⏱️ Takes less than 2 minutes",
+      "📄 Professional PDF output",
+      "🎯 Curriculum aligned"
+    ],
+    "button": "Start with Recommended Option"
+  },
+  "profileDropdown": {
+    "userName": "User Name",
+    "role": "Role",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "profile": "Profile",
+    "preferences": "Preferences",
+    "logout": "Log out",
+    "logoutNotice": {
+      "title": "Logging Out",
+      "desc": "You are being securely logged out. Please wait a moment..."
+    }
+  },
+  "createOptions": {
+    "heading": "Create Your Worksheet",
+    "subheading": "Choose your preferred method to get started",
+    "getStarted": "Get Started",
+    "image": {
+      "title": "Generate from Image",
+      "description": "Upload image of textbook, notebook or syllabus",
+      "note": "Allow formats: JPG, PNG, JPEG, PDF"
+    },
+    "topic": {
+      "title": "Generate from Topic",
+      "description": "Paste Text / Type Topic",
+      "note": "Enter any topic to create worksheets"
+    },
+    "sample": {
+      "title": "Generate from Sample Worksheet",
+      "description": "Upload Sample Worksheet (PDF/Image)",
+      "note": "Want a similar worksheet with new questions? Upload it here."
+    }
+  },
+  "aiTools": {
+    "hero": {
+      "title": "Transform Education with",
+      "highlight": "AI-Powered Tools",
+      "description": "Whether you're a student seeking help, a parent supporting learning, a teacher creating content, or a tutor enhancing lessons – our AI tools are designed specifically for your educational needs.",
+      "button": "Explore AI Tools"
+    },
+    "section": {
+      "heading": "Find the Perfect AI Tool for Your Educational Journey",
+      "description": "Our comprehensive collection of AI-powered educational tools is designed to support every member of the learning community. From homework help to lesson planning, from interactive games to assessment tools - discover how AI can enhance your educational experience."
+    },
+    "cards": {
+      "students": {
+        "title": "For Students",
+        "description": "Get instant homework help, practice with AI tutors, and enhance your learning",
+        "features": [
+          "AI Homework Assistant",
+          "Interactive Learning Games",
+          "Smart Study Planner"
+        ],
+        "button": "Explore Student Tools"
+      },
+      "teachers": {
+        "title": "For Teachers",
+        "description": "Create engaging content, assess students, and streamline your teaching",
+        "features": [
+          "Lesson Plan Generator",
+          "Quiz & Assessment Creator",
+          "Classroom Analytics"
+        ],
+        "button": "Explore Teaching Tools"
+      },
+      "parents": {
+        "title": "For Parents",
+        "description": "Support your child’s learning journey with tracking and guidance tools",
+        "features": ["Progress Tracking", "Homework Support", "Learning Plans"],
+        "button": "Explore Parent Tools"
+      },
+      "tutors": {
+        "title": "For Home Tutors",
+        "description": "Enhance your tutoring with personalized tools and resources",
+        "features": [
+          "Personalized Lessons",
+          "Student Analytics",
+          "Resource Library"
+        ],
+        "button": "Explore Tutor Tools"
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your Educational Experience?",
+      "description": "Join thousands of educators and learners who are already using our AI tools to enhance education.",
+      "button": "Browse All AI Tools"
+    }
+  },
+  "welcomeSubtitle": "Ready to create amazing worksheets, quizzes, reports and more with AI?",
+  "createWorksheetNow": "Create Worksheet Now",
+  "takeTour": "Take a Tour",
+  "pro": "Pro",
+  "curriculumInfo": "India • CBSE • Grade 2",
+  "usage": "Usage",
+  "usageCount": "{{used}}/{{total}}",
+  "remaining": "{{remaining}} left",
+  "percentageRemaining": "{{percentage}}% remaining",
+  "nav": {
+    "create": "Create",
+    "aiTools": "AI Tools",
+    "worksheets": "Worksheets",
+    "library": "Worksheet Library",
+    "stories": "Stories"
+  },
+  "step1": {
+    "heading": "How would you like to create your worksheet?",
+    "subheading": "Choose your preferred input method",
+    "options": {
+      "upload": {
+        "title": "Upload Content",
+        "desc": "Upload files, images, or PDFs"
+      },
+      "type": {
+        "title": "Type Topic",
+        "desc": "Enter learning topic or concept"
+      }
+    },
+    "continue": "Continue"
+  },
+  "step2": {
+    "heading": "Select Curriculum, Grade & Questions",
+    "subheading": "Choose educational framework, level, subject, number of questions, and state (if applicable)"
+  },
+  "curriculum": {
+    "label": "Curriculum",
+    "placeholder": "Select curriculum"
+  },
+  "state": {
+    "label": "State",
+    "placeholder": "Select state"
+  },
+  "grade": {
+    "label": "Grade",
+    "placeholder": "Select grade"
+  },
+  "subject": {
+    "label": "Subject",
+    "placeholder": "Select subject"
+  },
+  "numberOfQuestions": {
+    "title": "Number of Questions",
+    "placeholder": "Select number of questions"
+  },
+  "step3": {
+    "title": "Add Your Content",
+    "subtitle": "Upload up to 5 image or PDF files",
+    "dragDrop": "Drag and drop image or PDF files here, or click to browse",
+    "chooseFiles": "Choose Files",
+    "supportedFormats": "Supports JPG, PNG, GIF, PDF (Max PDF size: 10MB, Max 5 files)",
+    "uploadedFiles": "Uploaded Files:",
+    "fileName": "File Name",
+    "actions": "Actions",
+    "previewAlt": "Preview"
+  }
+}
