@@ -153,7 +153,7 @@ const GeneratedWorkSheet: React.FC = () => {
     let currentSectionLabel = "";
     const questions: Question[] = [];
     let worksheetTitle = "";
-    let bonusContent: { funFact?: string; realWorld?: string; note?: string } = {};
+    let bonusContent: { funFact?: string; realWorld?: string; brainTeaser?: string; note?: string } = {};
 
     if (lines.length > 0) {
       worksheetTitle = lines[0].replace("WORKSHEET ON", "").trim();
@@ -197,6 +197,12 @@ const GeneratedWorkSheet: React.FC = () => {
       if (upper.startsWith("REAL-WORLD APPLICATION:")) {
         bonusContent.realWorld = line
           .replace(/^[Rr][Ee][Aa][Ll]-[Ww][Oo][Rr][Ll][Dd] [Aa][Pp][Pp][Ll][Ii][Cc][Aa][Tt][Ii][Oo][Nn]:\s*/, "")
+          .trim();
+        continue;
+      }
+      if (upper.startsWith("BRAIN TEASER:")) {
+        bonusContent.brainTeaser = line
+          .replace(/^[Bb][Rr][Aa][Ii][Nn] [Tt][Ee][Aa][Ss][Ee][Rr]:\s*/, "")
           .trim();
         continue;
       }

@@ -34,6 +34,7 @@ interface WorksheetContentProps {
     funFact?: string;
     realWorld?: string;
     note?: string;
+    brainTeaser?: string;
   };
 }
 
@@ -348,30 +349,43 @@ const WorksheetContent: React.FC<WorksheetContentProps> = ({
           ))}
         </div>
 
-        {bonusContent?.funFact && (
-          <div className={styles.bonusSection}>
-            <Title level={4} className={styles.bonusTitle}>
-              Fun Fact
+        {(bonusContent?.funFact || bonusContent?.realWorld || bonusContent?.brainTeaser || bonusContent?.note) && (
+          <div className={styles.bonusGroup}>
+            <Title level={3} className={styles.bonusGroupTitle}>
+              BONUS CONTENT
             </Title>
-            <Text className={styles.bonusText}>{bonusContent.funFact}</Text>
-          </div>
-        )}
-
-        {bonusContent?.realWorld && (
-          <div className={styles.bonusSection}>
-            <Title level={4} className={styles.bonusTitle}>
-              Real-World Application
-            </Title>
-            <Text className={styles.bonusText}>{bonusContent.realWorld}</Text>
-          </div>
-        )}
-
-        {bonusContent?.note && (
-          <div className={styles.bonusSection}>
-            <Title level={4} className={styles.bonusTitle}>
-              Bonus Content
-            </Title>
-            <Text className={styles.bonusText}>{bonusContent.note}</Text>
+            {bonusContent?.funFact && (
+              <div className={styles.bonusSection}>
+                <Title level={4} className={styles.bonusTitle}>
+                  Fun Fact
+                </Title>
+                <Text className={styles.bonusText}>{bonusContent.funFact}</Text>
+              </div>
+            )}
+            {bonusContent?.realWorld && (
+              <div className={styles.bonusSection}>
+                <Title level={4} className={styles.bonusTitle}>
+                  Real-World Application
+                </Title>
+                <Text className={styles.bonusText}>{bonusContent.realWorld}</Text>
+              </div>
+            )}
+            {bonusContent?.brainTeaser && (
+              <div className={styles.bonusSection}>
+                <Title level={4} className={styles.bonusTitle}>
+                  Brain Teaser
+                </Title>
+                <Text className={styles.bonusText}>{bonusContent.brainTeaser}</Text>
+              </div>
+            )}
+            {bonusContent?.note && (
+              <div className={styles.bonusSection}>
+                <Title level={4} className={styles.bonusTitle}>
+                  Additional Note
+                </Title>
+                <Text className={styles.bonusText}>{bonusContent.note}</Text>
+              </div>
+            )}
           </div>
         )}
 
