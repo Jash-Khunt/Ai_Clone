@@ -21,10 +21,14 @@ interface Question {
     | "True/False"
     | "Word Problem"
     | "Bonus Question"
-    | "Brain Teaser";
+    | "Brain Teaser"
+    | "One-word Answer";
   question: string;
   options?: string[];
   instruction?: string;
+  section?: string;
+  matchLeft?: string[];
+  matchRight?: string[];
 }
 
 const GeneratedWorkSheet: React.FC = () => {
@@ -146,9 +150,10 @@ const GeneratedWorkSheet: React.FC = () => {
 
     const lines = response.split("\n").filter((line) => line.trim() !== "");
     let currentSection = "";
+    let currentSectionLabel = "";
     const questions: Question[] = [];
     let worksheetTitle = "";
-    let bonusContent = { funFact: "", realWorld: "" };
+    let bonusContent: { funFact?: string; realWorld?: string; note?: string } = {};
 
     if (lines.length > 0) {
       worksheetTitle = lines[0].replace("WORKSHEET ON", "").trim();
@@ -156,70 +161,97 @@ const GeneratedWorkSheet: React.FC = () => {
 
     let currentQuestion: Partial<Question> | null = null;
     let isInMatchSection = false;
-    let matchOptions: string[] = [];
+    let matchLeft: string[] = [];
+    let matchRight: string[] = [];
+    let isInBonusBlock = false;
+    const bonusLines: string[] = [];
 
     for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
+      const rawLine = lines[i];
+      const line = rawLine.trim();
+      const upper = line.toUpperCase();
 
-      if (line.toUpperCase().startsWith("BONUS CONTENT") || !line) continue;
-      if (line.toUpperCase().startsWith("FUN FACT:")) {
-        bonusContent.funFact = line.replace("FUN FACT:", "").trim();
+      if (!line) continue;
+
+      if (upper.startsWith("BONUS CONTENT")) {
+        isInBonusBlock = true;
+        // do not continue collecting title line as content
         continue;
       }
-      if (line.toUpperCase().startsWith("REAL-WORLD APPLICATION:")) {
+
+      if (isInBonusBlock) {
+        // Collect all subsequent lines until another section header appears
+        if (upper.startsWith("SECTION ")) {
+          isInBonusBlock = false;
+          // fall through to handle the section line below
+        } else {
+          bonusLines.push(line);
+          continue;
+        }
+      }
+
+      if (upper.startsWith("FUN FACT:")) {
+        bonusContent.funFact = line.replace(/^[Ff][Uu][Nn] [Ff][Aa][Cc][Tt]:\s*/, "").trim();
+        continue;
+      }
+      if (upper.startsWith("REAL-WORLD APPLICATION:")) {
         bonusContent.realWorld = line
-          .replace("REAL-WORLD APPLICATION:", "")
+          .replace(/^[Rr][Ee][Aa][Ll]-[Ww][Oo][Rr][Ll][Dd] [Aa][Pp][Pp][Ll][Ii][Cc][Aa][Tt][Ii][Oo][Nn]:\s*/, "")
           .trim();
         continue;
       }
-      if (line.toUpperCase().startsWith("ANSWER KEY")) {
+      if (upper.startsWith("ANSWER KEY")) {
         // Skip answer key section
-        while (i < lines.length && !lines[i].trim().startsWith("SECTION")) {
+        while (i < lines.length && !lines[i].trim().toUpperCase().startsWith("SECTION")) {
           i++;
         }
+        i--; // step back one so SECTION line is processed in the next loop
         continue;
       }
 
-      // Handle Hindi section names
-      if (line.startsWith("SECTION") || line.includes(":")) {
+      // Handle section names (English or Hindi), case-insensitive
+      if (upper.startsWith("SECTION ") || line.includes(":")) {
+        const possibleLabel = line;
         const sectionText = line.split(":")[1]?.trim() || line;
+        currentSectionLabel = possibleLabel;
 
-        // Check for Hindi section names
         if (
           sectionText.includes("बहुविकल्पीय") ||
-          sectionText.includes("Multiple Choice")
+          sectionText.toLowerCase().includes("multiple choice")
         ) {
           currentSection = "MCQ";
           isInMatchSection = false;
         } else if (
           sectionText.includes("रिक्त स्थान") ||
-          sectionText.includes("Fill in the Blanks")
+          sectionText.toLowerCase().includes("fill in the blanks")
         ) {
           currentSection = "FILL";
           isInMatchSection = false;
         } else if (
           sectionText.includes("सही या गलत") ||
-          sectionText.includes("True or False")
+          sectionText.toLowerCase().includes("true or false")
         ) {
           currentSection = "TRUE";
           isInMatchSection = false;
         } else if (
           sectionText.includes("मिलान") ||
-          sectionText.includes("Match the Following")
+          sectionText.toLowerCase().includes("match the following")
         ) {
           currentSection = "MATCH";
           isInMatchSection = true;
-          matchOptions = [];
+          matchLeft = [];
+          matchRight = [];
         } else if (
           sectionText.includes("एक शब्द") ||
-          sectionText.includes("One-word Answer")
+          sectionText.toLowerCase().includes("one-word answer") ||
+          sectionText.toLowerCase().includes("one word answer")
         ) {
-          currentSection = "SHORT";
+          currentSection = "ONEWORD";
           isInMatchSection = false;
-        } else if (sectionText.includes("BONUS")) {
+        } else if (sectionText.toLowerCase().includes("bonus")) {
           currentSection = "BONUS";
           isInMatchSection = false;
-        } else if (sectionText.includes("BRAIN")) {
+        } else if (sectionText.toLowerCase().includes("brain")) {
           currentSection = "BRAIN";
           isInMatchSection = false;
         } else {
@@ -232,10 +264,12 @@ const GeneratedWorkSheet: React.FC = () => {
       const questionMatch = line.match(/^(\d+)\.(.*)/);
       if (questionMatch) {
         if (currentQuestion) {
-          // For match questions, add all collected options
-          if (isInMatchSection && matchOptions.length > 0) {
-            currentQuestion.options = [...matchOptions];
-            matchOptions = [];
+          // Persist match columns if in match section
+          if (isInMatchSection && (matchLeft.length > 0 || matchRight.length > 0)) {
+            currentQuestion.matchLeft = [...matchLeft];
+            currentQuestion.matchRight = [...matchRight];
+            matchLeft = [];
+            matchRight = [];
           }
           questions.push(currentQuestion as Question);
         }
@@ -246,28 +280,16 @@ const GeneratedWorkSheet: React.FC = () => {
         let questionType: Question["type"] = "Short Answer";
 
         // Determine question type based on current section
-        if (
-          currentSection.includes("MCQ") ||
-          currentSection.includes("MULTIPLE")
-        ) {
+        if (currentSection.includes("MCQ") || currentSection.includes("MULTIPLE")) {
           questionType = "Multiple Choice";
-        } else if (
-          currentSection.includes("FILL") ||
-          currentSection.includes("BLANKS")
-        ) {
+        } else if (currentSection.includes("FILL") || currentSection.includes("BLANKS")) {
           questionType = "Fill in the Blanks";
-        } else if (
-          currentSection.includes("TRUE") ||
-          currentSection.includes("FALSE")
-        ) {
+        } else if (currentSection.includes("TRUE") || currentSection.includes("FALSE")) {
           questionType = "True/False";
         } else if (currentSection.includes("MATCH")) {
-          questionType = "Short Answer";
-        } else if (
-          currentSection.includes("SHORT") ||
-          currentSection.includes("ONE-WORD")
-        ) {
-          questionType = "Short Answer";
+          questionType = "Short Answer"; // Rendered specially as match later
+        } else if (currentSection.includes("ONEWORD") || currentSection.includes("ONE-WORD") || currentSection.includes("SHORT")) {
+          questionType = "One-word Answer";
         } else if (currentSection.includes("BONUS")) {
           questionType = "Bonus Question";
         } else if (currentSection.includes("BRAIN")) {
@@ -281,6 +303,7 @@ const GeneratedWorkSheet: React.FC = () => {
           type: questionType,
           question: questionText,
           options: questionType === "Multiple Choice" ? [] : undefined,
+          section: currentSectionLabel,
         };
         continue;
       }
@@ -291,32 +314,45 @@ const GeneratedWorkSheet: React.FC = () => {
         if (optionMatch) {
           if (!currentQuestion.options) currentQuestion.options = [];
           currentQuestion.options.push(optionMatch[2].trim());
+          continue;
         }
       }
 
-      // Handle match the following questions - collect options
+      // Handle match the following questions - collect left/right columns
       if (isInMatchSection && currentQuestion) {
-        // Match lines like "a. Hear" or "a. Hear _______"
-        const matchOptionMatch = line.match(/^([a-e])\.\s*(.*?)\s*_*$/i);
-        if (matchOptionMatch) {
-          const optionText = `${
-            matchOptionMatch[1]
-          }. ${matchOptionMatch[2].trim()}`;
-          matchOptions.push(optionText);
+        // Pattern like: "a. Eyes        1. Hearing"
+        const dualMatch = line.match(/^([a-e])\.\s*(.*?)\s{2,}([1-9][0-9]*)\.\s*(.*)$/i);
+        if (dualMatch) {
+          matchLeft.push(`${dualMatch[1].toLowerCase()}. ${dualMatch[2].trim()}`);
+          matchRight.push(`${dualMatch[3]}. ${dualMatch[4].trim()}`);
+          continue;
         }
-        // Also handle lines that are just the option text (like "Eye", "Ear", etc.)
-        else if (line.match(/^[a-zA-Z][a-zA-Z\s]*$/)) {
-          matchOptions.push(line);
+        // Left item only: "a. Eyes"
+        const leftOnly = line.match(/^([a-e])\.\s*(.*)$/i);
+        if (leftOnly) {
+          matchLeft.push(`${leftOnly[1].toLowerCase()}. ${leftOnly[2].trim()}`);
+          continue;
+        }
+        // Right item only: "1. Hearing"
+        const rightOnly = line.match(/^([1-9][0-9]*)\.\s*(.*)$/);
+        if (rightOnly) {
+          matchRight.push(`${rightOnly[1]}. ${rightOnly[2].trim()}`);
+          continue;
         }
       }
     }
 
     if (currentQuestion) {
-      // For match questions, add all collected options
-      if (isInMatchSection && matchOptions.length > 0) {
-        currentQuestion.options = [...matchOptions];
+      // Persist match columns if collected
+      if (isInMatchSection && (matchLeft.length > 0 || matchRight.length > 0)) {
+        currentQuestion.matchLeft = [...matchLeft];
+        currentQuestion.matchRight = [...matchRight];
       }
       questions.push(currentQuestion as Question);
+    }
+
+    if (bonusLines.length > 0 && !bonusContent.funFact && !bonusContent.realWorld) {
+      bonusContent.note = bonusLines.join(" ");
     }
 
     return { title: worksheetTitle, questions, bonusContent };
