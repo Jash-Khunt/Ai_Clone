@@ -15,10 +15,14 @@ interface Question {
     | "True/False"
     | "Word Problem"
     | "Bonus Question"
-    | "Brain Teaser";
+    | "Brain Teaser"
+    | "One-word Answer";
   question: string;
   options?: string[];
   instruction?: string;
+  section?: string;
+  matchLeft?: string[];
+  matchRight?: string[];
 }
 
 interface WorksheetContentProps {
@@ -29,6 +33,7 @@ interface WorksheetContentProps {
   bonusContent?: {
     funFact?: string;
     realWorld?: string;
+    note?: string;
   };
 }
 
@@ -95,9 +100,27 @@ const WorksheetContent: React.FC<WorksheetContentProps> = ({
           </div>
         );
 
+      case "One-word Answer":
+        return (
+          <div key={question.id} className={styles.questionContainer}>
+            <div className={styles.questionHeader}>
+              <Text className={styles.questionNumber}>
+                Question {question.id}
+              </Text>
+              <Text className={styles.questionType}>{question.type}</Text>
+            </div>
+            <Text className={styles.questionText}>{question.question}</Text>
+            <div className={styles.answerLines}>
+              <div className={styles.answerLine}></div>
+            </div>
+          </div>
+        );
+
       case "Short Answer":
-        // Check if it's a match question
+        // Check if it's a match question (by presence of match lists or options pattern)
         if (
+          (question.matchLeft && question.matchLeft.length > 0) ||
+          (question.matchRight && question.matchRight.length > 0) ||
           question.question.includes("Match") ||
           question.question.includes("मिलान") ||
           (question.options &&
@@ -113,34 +136,54 @@ const WorksheetContent: React.FC<WorksheetContentProps> = ({
                 <Text className={styles.questionType}>Match the Following</Text>
               </div>
               <Text className={styles.questionText}>{question.question}</Text>
-              {question.options && (
-                <div className={styles.matchOptions}>
-                  {question.options.map((option, index) => {
-                    // For options like "a. Hear", split into letter and text
-                    const optionMatch = option.match(/^([a-e])\.\s*(.*)$/i);
-                    if (optionMatch) {
-                      return (
-                        <div key={index} className={styles.matchOption}>
-                          <span className={styles.matchLetter}>
-                            {optionMatch[1]}.
-                          </span>
-                          <span className={styles.matchText}>
-                            {optionMatch[2]}
-                          </span>
-                          <span className={styles.matchBlank}>_______</span>
-                        </div>
-                      );
-                    } else {
-                      // For simple options like "Eye"
-                      return (
-                        <div key={index} className={styles.matchOption}>
-                          <span className={styles.matchText}>{option}</span>
-                          <span className={styles.matchBlank}>_______</span>
-                        </div>
-                      );
-                    }
-                  })}
+
+              {question.matchLeft || question.matchRight ? (
+                <div style={{ display: "flex", gap: 24 }}>
+                  <div>
+                    {(question.matchLeft || []).map((opt, idx) => (
+                      <div key={idx} className={styles.matchOption}>
+                        <span className={styles.matchText}>{opt}</span>
+                        <span className={styles.matchBlank}>_______</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div>
+                    {(question.matchRight || []).map((opt, idx) => (
+                      <div key={idx} className={styles.matchOption}>
+                        <span className={styles.matchText}>{opt}</span>
+                        <span className={styles.matchBlank}>_______</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              ) : (
+                question.options && (
+                  <div className={styles.matchOptions}>
+                    {question.options.map((option, index) => {
+                      const optionMatch = option.match(/^([a-e])\.\s*(.*)$/i);
+                      if (optionMatch) {
+                        return (
+                          <div key={index} className={styles.matchOption}>
+                            <span className={styles.matchLetter}>
+                              {optionMatch[1]}.
+                            </span>
+                            <span className={styles.matchText}>
+                              {optionMatch[2]}
+                            </span>
+                            <span className={styles.matchBlank}>_______</span>
+                          </div>
+                        );
+                      } else {
+                        return (
+                          <div key={index} className={styles.matchOption}>
+                            <span className={styles.matchText}>{option}</span>
+                            <span className={styles.matchBlank}>_______</span>
+                          </div>
+                        );
+                      }
+                    })}
+                  </div>
+                )
               )}
             </div>
           );
@@ -256,6 +299,18 @@ const WorksheetContent: React.FC<WorksheetContentProps> = ({
     }
   };
 
+  // Group questions by section label if provided
+  const sectionOrder: string[] = [];
+  const groupedBySection = questions.reduce((acc: Record<string, Question[]>, q) => {
+    const key = q.section || "Questions";
+    if (!acc[key]) {
+      acc[key] = [];
+      sectionOrder.push(key);
+    }
+    acc[key].push(q);
+    return acc;
+  }, {});
+
   return (
     <div className={styles.worksheetContent}>
       <div className={styles.worksheetPaper}>
@@ -297,7 +352,14 @@ const WorksheetContent: React.FC<WorksheetContentProps> = ({
         </div>
 
         <div className={styles.questionsSection}>
-          {questions.map((question) => renderQuestion(question))}
+          {sectionOrder.map((sectionLabel) => (
+            <div key={sectionLabel}>
+              <Title level={4} className={styles.instructionsTitle}>
+                {sectionLabel}
+              </Title>
+              {groupedBySection[sectionLabel].map((question) => renderQuestion(question))}
+            </div>
+          ))}
         </div>
 
         {bonusContent?.funFact && (
@@ -315,6 +377,15 @@ const WorksheetContent: React.FC<WorksheetContentProps> = ({
               Real-World Application
             </Title>
             <Text className={styles.bonusText}>{bonusContent.realWorld}</Text>
+          </div>
+        )}
+
+        {bonusContent?.note && (
+          <div className={styles.bonusSection}>
+            <Title level={4} className={styles.bonusTitle}>
+              Bonus Content
+            </Title>
+            <Text className={styles.bonusText}>{bonusContent.note}</Text>
           </div>
         )}
 
